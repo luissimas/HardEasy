@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5093f1aab924244c814bb8ce085240c, type: 3}
+  m_Name: Asus Tuf B360-Plus Gaming
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 21300000, guid: b51f0e90f4f6c5746b23129e36b91844, type: 3}
+  Nome: Asus B360-Plus
+  Socket: lga1151
+  DDR: ddr4
+  QuantidadeMemoria: 32
+  SlotsPCIE: 3
+  PortasSata: 6
+  SuporteSLI: 0
+  SuporteCrossfire: 0
+  Formato: m-ATX
+  Preco: 599
