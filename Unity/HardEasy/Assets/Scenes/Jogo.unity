@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 0}
-  m_SizeDelta: {x: 242.6, y: 91.1}
+  m_AnchoredPosition: {x: -0.0000066757, y: 0}
+  m_SizeDelta: {x: 349.54, y: 91.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107747632
 MonoBehaviour:
@@ -222,7 +222,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: -150
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -295,7 +295,7 @@ Prefab:
     - target: {fileID: 224440189214768290, guid: 879bcf94c563c6e459fb3437fd85150e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224440189214768290, guid: 879bcf94c563c6e459fb3437fd85150e,
         type: 2}
@@ -427,6 +427,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114118851374884588, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114118851374884588, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarPlacaDeVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118851374884588, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879bcf94c563c6e459fb3437fd85150e, type: 2}
   m_IsPrefabAsset: 0
@@ -485,7 +500,7 @@ Prefab:
     - target: {fileID: 224328186935855462, guid: 1085f27fdc4c493459baaf28e205698a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224328186935855462, guid: 1085f27fdc4c493459baaf28e205698a,
         type: 2}
@@ -796,7 +811,7 @@ Prefab:
     - target: {fileID: 224914256287426618, guid: 0297e32b42e2718489c2d1ef04e083ef,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 68.4
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 224914256287426618, guid: 0297e32b42e2718489c2d1ef04e083ef,
         type: 2}
@@ -906,7 +921,7 @@ Prefab:
     - target: {fileID: 224125354529806490, guid: 69889fb55e2fcf649ba814e8eaaa116c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224125354529806490, guid: 69889fb55e2fcf649ba814e8eaaa116c,
         type: 2}
@@ -1086,7 +1101,7 @@ Prefab:
     - target: {fileID: 224445733285553336, guid: 65de95f456ebac3448f78b66fae801b4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.5
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224445733285553336, guid: 65de95f456ebac3448f78b66fae801b4,
         type: 2}
@@ -1198,6 +1213,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114179728242166146, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114179728242166146, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarFonte
+      objectReference: {fileID: 0}
+    - target: {fileID: 114179728242166146, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65de95f456ebac3448f78b66fae801b4, type: 2}
   m_IsPrefabAsset: 0
@@ -1544,7 +1574,7 @@ Prefab:
     - target: {fileID: 224192514278367200, guid: ac09b201d83fdae4eb0fd91e998aef5f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224192514278367200, guid: ac09b201d83fdae4eb0fd91e998aef5f,
         type: 2}
@@ -1696,6 +1726,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114589189335077058, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114589189335077058, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarPlacaMae
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589189335077058, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac09b201d83fdae4eb0fd91e998aef5f, type: 2}
   m_IsPrefabAsset: 0
@@ -1759,7 +1804,7 @@ Prefab:
     - target: {fileID: 224585109934093766, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224585109934093766, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
@@ -1871,6 +1916,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114674503521771458, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114674503521771458, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarDisco
+      objectReference: {fileID: 0}
+    - target: {fileID: 114674503521771458, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9982fc4d7bb47f4429f79aa7ec437fe9, type: 2}
   m_IsPrefabAsset: 0
@@ -1929,7 +1989,7 @@ Prefab:
     - target: {fileID: 224012251308334218, guid: a70c207f5731ab140a35c078a9e7bc65,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224012251308334218, guid: a70c207f5731ab140a35c078a9e7bc65,
         type: 2}
@@ -2071,6 +2131,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114737345547141898, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114737345547141898, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarProcessador
+      objectReference: {fileID: 0}
+    - target: {fileID: 114737345547141898, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70c207f5731ab140a35c078a9e7bc65, type: 2}
   m_IsPrefabAsset: 0
@@ -2209,7 +2284,7 @@ Prefab:
     - target: {fileID: 224125500105642996, guid: bf930dac59a0b8f4089fee16a7c7db1f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224125500105642996, guid: bf930dac59a0b8f4089fee16a7c7db1f,
         type: 2}
@@ -2404,7 +2479,7 @@ Prefab:
     - target: {fileID: 224890952754006628, guid: 547f1e33980aaaf4f9913a13e252e0be,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224890952754006628, guid: 547f1e33980aaaf4f9913a13e252e0be,
         type: 2}
@@ -2536,6 +2611,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114352860823306998, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114352860823306998, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarMemoria
+      objectReference: {fileID: 0}
+    - target: {fileID: 114352860823306998, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547f1e33980aaaf4f9913a13e252e0be, type: 2}
   m_IsPrefabAsset: 0
@@ -2594,7 +2684,7 @@ Prefab:
     - target: {fileID: 224927069282834588, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224927069282834588, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
         type: 2}
@@ -2774,7 +2864,7 @@ Prefab:
     - target: {fileID: 224196460118046594, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224196460118046594, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
         type: 2}
@@ -2985,7 +3075,7 @@ Prefab:
     - target: {fileID: 224862379367377042, guid: fbf1d0ff1527ba041a7118716abf3211,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224862379367377042, guid: fbf1d0ff1527ba041a7118716abf3211,
         type: 2}
@@ -3205,7 +3295,7 @@ Prefab:
     - target: {fileID: 224884679967175696, guid: 58a23538c24345947b4c2529b93c30d3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 142.3
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 224884679967175696, guid: 58a23538c24345947b4c2529b93c30d3,
         type: 2}
@@ -3415,7 +3505,7 @@ Prefab:
     - target: {fileID: 224677491459552298, guid: 32f47c8a5a76f004fbee864adf16dab0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -64.2
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 224677491459552298, guid: 32f47c8a5a76f004fbee864adf16dab0,
         type: 2}
@@ -3644,7 +3734,7 @@ Prefab:
     - target: {fileID: 224857411368044536, guid: f35ea0017d05c1d499543065fc6c471a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -148.49998
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 224857411368044536, guid: f35ea0017d05c1d499543065fc6c471a,
         type: 2}
@@ -3766,6 +3856,21 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114726620825549510, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951469629}
+    - target: {fileID: 114726620825549510, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrocarGabinete
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726620825549510, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 769429637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35ea0017d05c1d499543065fc6c471a, type: 2}
   m_IsPrefabAsset: 0

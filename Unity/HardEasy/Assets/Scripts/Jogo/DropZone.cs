@@ -35,6 +35,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		if (Manager.PodeInteragir)
 		{
 			eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
+			Manager.PodeInteragir = false;
 
 			if (GetComponentInChildren<DisplayPlacaMae>() != null)
 			{
@@ -128,23 +129,24 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				Manager.CompararGabinete();
 			}
 
+			Invoke("RetornarCartas", 2);
+		}
+	}
 
-			if (GetComponentsInChildren<CanvasGroup>()[0].gameObject.tag == "PlayerCard")
+	public void RetornarCartas()
+	{
+		while (GetComponentInChildren<CanvasGroup>() != null)
+		{
+			for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
 			{
-				GetComponentsInChildren<CanvasGroup>()[0].gameObject.transform.SetParent(CartasJogador.transform);
-			}
-			else if (GetComponentsInChildren<CanvasGroup>()[0].gameObject.tag == "OpponentCard")
-			{
-				GetComponentsInChildren<CanvasGroup>()[0].gameObject.transform.SetParent(CartasOponente.transform);
-			}
-
-			if (GetComponentsInChildren<CanvasGroup>()[1].gameObject.tag == "PlayerCard")
-			{
-				GetComponentsInChildren<CanvasGroup>()[1].gameObject.transform.SetParent(CartasJogador.transform);
-			}
-			else if (GetComponentsInChildren<CanvasGroup>()[1].gameObject.tag == "OpponentCard")
-			{
-				GetComponentsInChildren<CanvasGroup>()[1].gameObject.transform.SetParent(CartasOponente.transform);
+				if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "PlayerCard")
+				{
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(CartasJogador.transform);
+				}
+				else if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "OpponentCard")
+				{
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(CartasOponente.transform);
+				}
 			}
 		}
 	}
