@@ -35,7 +35,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		if (Manager.PodeInteragir)
 		{
 			eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
-			Manager.PodeInteragir = false;
 
 			if (GetComponentInChildren<DisplayPlacaMae>() != null)
 			{
@@ -129,6 +128,11 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				Manager.CompararGabinete();
 			}
 
+			for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
+			{
+				GetComponentsInChildren<CanvasGroup>()[i].blocksRaycasts = false;
+			}
+
 			Invoke("RetornarCartas", 2);
 		}
 	}
@@ -139,6 +143,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		{
 			for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
 			{
+				GetComponentsInChildren<CanvasGroup>()[i].gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
+
 				if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "PlayerCard")
 				{
 					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(CartasJogador.transform);

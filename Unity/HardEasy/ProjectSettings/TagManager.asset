@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCard
   - OpponentCard
+  - Drop
   layers:
   - Default
   - TransparentFX

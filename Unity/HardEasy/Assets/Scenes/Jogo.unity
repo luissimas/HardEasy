@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 107747635}
   m_Layer: 5
   m_Name: CardDropArea
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1849,72 +1849,72 @@ Prefab:
     - target: {fileID: 114957494682511570, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114957494682511570, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114957794967906068, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114957794967906068, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114140957196144232, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114140957196144232, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114365660963502366, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114365660963502366, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114697284278095632, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114697284278095632, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114647497936643348, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114647497936643348, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114912764105024436, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114912764105024436, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114674503521771458, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
         type: 2}

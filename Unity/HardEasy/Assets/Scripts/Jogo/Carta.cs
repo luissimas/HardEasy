@@ -21,6 +21,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (Manager.PodeInteragir)
 		{
+			if(transform.parent.tag != "Drop")
 			//Verifica a tag do objeto
 			if (gameObject.tag == "PlayerCard")
 			{
@@ -42,8 +43,11 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (Manager.PodeInteragir)
 		{
-			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
-			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
+			if(transform.parent.tag != "Drop")
+			{
+				gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
+				gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
+			}
 		}
 	}
 
@@ -59,7 +63,10 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (Manager.PodeInteragir)
 		{
-			gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
+			if (transform.parent.tag != "Drop")
+			{
+				gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
+			}
 		}
 	}
 
@@ -67,14 +74,17 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (Manager.PodeInteragir)
 		{
-			gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true; //Desbloqueia os raycasts da carta, permitindo a interação novamente
-			gameObject.transform.position = PosicaoOriginal; //Retorna a carta para a posição original
+			if (transform.parent.tag != "Drop")
+			{
+				gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true; //Desbloqueia os raycasts da carta, permitindo a interação novamente
+				gameObject.transform.position = PosicaoOriginal; //Retorna a carta para a posição original
+			}
 		}
 	}
 
 	private void OnTransformParentChanged()
 	{
-		if ((transform.parent.tag == "PlayerCard") || (transform.parent.tag == "OpponentCard"))
+		if (transform.parent.tag != "Drop")
 		{
 			gameObject.transform.position = PosicaoOriginal;
 		}
