@@ -128,6 +128,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				Manager.CompararGabinete();
 			}
 
+
 			if (GetComponentsInChildren<CanvasGroup>()[0].gameObject.tag == "PlayerCard")
 			{
 				GetComponentsInChildren<CanvasGroup>()[0].gameObject.transform.SetParent(CartasJogador.transform);

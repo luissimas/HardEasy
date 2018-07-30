@@ -139,7 +139,7 @@ public class DisplayGabinete : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
 	private void OnTransformParentChanged()
 	{
-		if (transform.parent.tag == "PlayerCard" || transform.parent.tag == "OpponentCard")
+		if ((transform.parent.tag == "PlayerCard") || (transform.parent.tag == "OpponentCard"))
 		{
 			gameObject.transform.position = PosicaoOriginal;
 		}
