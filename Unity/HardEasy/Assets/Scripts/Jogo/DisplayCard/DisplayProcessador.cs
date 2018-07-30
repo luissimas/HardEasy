@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class DisplayProcessador : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler{
+public class DisplayProcessador : MonoBehaviour{
 
 	public Processador processador;
 
@@ -30,7 +30,7 @@ public class DisplayProcessador : MonoBehaviour, IPointerEnterHandler, IPointerE
 
 	void Start() 
 	{
-		PosicaoOriginal = gameObject.transform.position; //Armazena a posição original da carta
+		
 	}
 
 	void Update()
@@ -77,80 +77,6 @@ public class DisplayProcessador : MonoBehaviour, IPointerEnterHandler, IPointerE
 
 		Imagem.sprite = processador.Imagem;
 	}
-
-	#region Interação com o usuário
-	Vector3 PosicaoOriginal;
-
-	//Identifica se o mouse entrou em cima do objeto
-	public void OnPointerEnter(PointerEventData eventData)
-	{
-		if (Manager.PodeInteragir)
-		{
-			//Verifica a tag do objeto
-			if (gameObject.tag == "PlayerCard")
-			{
-				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)1, (float)1); //Aumenta a escala do objeto
-			}
-			else if (gameObject.tag == "OpponentCard")
-			{
-				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)1, (float)1); //Aumenta a escala do objeto
-			}
-		}
-	}
-
-	//Identifica se o mouse saiu de cima do objeto
-	public void OnPointerExit(PointerEventData eventData)
-	{
-		if (Manager.PodeInteragir)
-		{
-			//Verifica a tag do objeto
-			if (gameObject.tag == "PlayerCard")
-			{
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.7, (float)0.7); //Volta a escala do objeto para o tamanho normal
-			}
-			else if (gameObject.tag == "OpponentCard")
-			{
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.7, (float)0.7); //Volta a escala do objeto para o tamanho normal
-			}
-		}
-	}
-
-	public void OnBeginDrag(PointerEventData eventData)
-	{
-		if (Manager.PodeInteragir)
-		{
-			gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false; //Bloqueia todos os raycasts da carta, permitindo que a drop zone identifique que a carta foi colocada
-		}
-	}
-
-	public void OnDrag(PointerEventData eventData)
-	{
-		if (Manager.PodeInteragir)
-		{
-			gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
-		}
-	}
-
-	public void OnEndDrag(PointerEventData eventData)
-	{
-		if (Manager.PodeInteragir)
-		{
-			gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true; //Desbloqueia os raycasts da carta, permitindo a interação novamente
-			gameObject.transform.position = PosicaoOriginal; //Retorna a carta para a posição original
-		}
-	}
-
-	private void OnTransformParentChanged()
-	{
-		if ((transform.parent.tag == "PlayerCard") || (transform.parent.tag == "OpponentCard"))
-		{
-			gameObject.transform.position = PosicaoOriginal;
-		}
-	}
-
-	#endregion
 
 	#region Gerar Atributos
 	private void GerarAtributoDesempenhoSingleCore()
