@@ -10,12 +10,11 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		PosicaoOriginal = gameObject.transform.position; //Armazena a posição original da carta
 		EscalaOriginal = gameObject.GetComponent<RectTransform>().localScale; //Armazena a escala original da carta
-		CardBack.SetActive(false);
 	}
 
 	void Update()
 	{
-		//Esconder();
+		Esconder();
 		
 	}
 
