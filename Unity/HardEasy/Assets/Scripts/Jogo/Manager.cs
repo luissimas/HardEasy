@@ -10,12 +10,12 @@ public class Manager : MonoBehaviour{
 	void Start() 
 	{
 		EstadoAtual = Estados.Inicio; //Inicia o jogo no estado de início
-		DropArea = DropAreaInspector;
 	}
 
 	void Update()
 	{
 		GerenciadorDeRodadas(); //Verifica o gerenciador de rodadas a cada frame
+		ProximoEstadoAoComparar(); //Avança uma rodada sempre que as cartas forem comparadas
 
 		HardCashJogadorText.text = HardCashJogador.ToString();
 		HardCashOponenteText.text = HardCashOponente.ToString();
@@ -28,7 +28,9 @@ public class Manager : MonoBehaviour{
 
 	public TMP_Text HardCashJogadorText, HardCashOponenteText;
 
-	[HideInInspector] public static bool PodeInteragir; //Variável universal para gerenciar se os jogadores podem ou não interagir
+	public static bool PodeInteragir = false; //Variável para gerenciar se os jogadores podem ou não interagir
+	public static bool Comparando = false; //Variável para gerenciar se as cartas estão sendo comparadas ou não
+
 
 	#endregion
 
@@ -36,8 +38,8 @@ public class Manager : MonoBehaviour{
 
 	[HideInInspector] public enum Estados {Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
 
-	[HideInInspector] public Estados EstadoAtual; //Variável para identificar o estado atual do jogo
-	[HideInInspector] public int Rodada = 0; //Variável para identificar em qual rodada o jogo está
+	public static Estados EstadoAtual; //Variável para identificar o estado atual do jogo
+	public static int Rodada = 0; //Variável para identificar em qual rodada o jogo está
 
 	//Gerencia o sistema de rodadas 
 	public void GerenciadorDeRodadas()
@@ -49,8 +51,10 @@ public class Manager : MonoBehaviour{
 			case (Estados.Inicio):
 				PodeInteragir = false; //Desabilita a interação do usuário com a interface
 				Lista.CarregarListas(); //Carega as listas dos componentes
+				DropArea = DropAreaInspector;
 				IniciarCartas(PanelJogador); //Embaralha e inicia as cartas do jogador
 				IniciarCartas(PanelOponente); //Embaralha e inicia as cartas do oponente
+				VerificarAsCartasSeSaoIguais(PanelJogador, PanelOponente); //Verifica se as cartas do jogador e do oponente são iguais
 				Rodada++; //Avança uma rodada
 				EstadoAtual = EstadoAtual + Random.Range(1, 3); //Escolhe quem irá começar jogando de forma aleatória
 				break;
@@ -104,14 +108,100 @@ public class Manager : MonoBehaviour{
 		}
 	}
 
+	//Avança para o próximo estado após uma comparação de cartas
+	public void ProximoEstadoAoComparar()
+	{
+		if (Comparando)
+		{
+			ProximoEstado();
+		}
+
+		Comparando = false;
+	}
+
 	#endregion
 
 	#region Iniciar e trocar as cartas
 
-	public GameObject PanelJogador, PanelOponente; //Variáveis que recebem o canvas do jogador e do oponente
+	public GameObject PanelJogador, PanelOponente;  //Variáveis que recebem o canvas do jogador e do oponente
 	//Variáveis para identificar se houve mudança nas cartas
 	public static bool JogadorCartaPlacaMaeMudou = false, JogadorCartaProcessadorMudou = false, JogadorCartaMemoriaMudou = false, JogadorCartaPlacaDeVideoMudou = false, JogadorCartaDiscoMudou = false, JogadorCartaFonteMudou = false, JogadorCartaGabineteMudou = false; 
 	public static bool OponenteCartaPlacaMaeMudou = false, OponenteCartaProcessadorMudou = false, OponenteCartaMemoriaMudou = false, OponenteCartaPlacaDeVideoMudou = false, OponenteCartaDiscoMudou = false, OponenteCartaFonteMudou = false, OponenteCartaGabineteMudou = false;
+
+	//Verifica se as cartas do jogador e do oponente são iguais
+	public void VerificarAsCartasSeSaoIguais(GameObject Panel, GameObject OutroPanel)
+	{
+		VerificarPlacaMaeIgual(Panel, OutroPanel);
+		VerificarProcessadorIgual(Panel, OutroPanel);
+		VerificarMemoriaIgual(Panel, OutroPanel);
+		VerificarPlacaDeVideoIgual(Panel, OutroPanel);
+		VerificarDiscoIgual(Panel, OutroPanel);
+		VerificarFonteIgual(Panel, OutroPanel);
+		VerificarGabineteIgual(Panel, OutroPanel);
+	}
+
+	public void VerificarPlacaMaeIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae)
+		{
+			Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
+			VerificarPlacaMaeIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarProcessadorIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayProcessador>().processador == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador)
+		{
+			Panel.GetComponentInChildren<DisplayProcessador>().processador = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
+			VerificarProcessadorIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarMemoriaIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayMemoria>().memoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria)
+		{
+			Panel.GetComponentInChildren<DisplayMemoria>().memoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)];
+			VerificarMemoriaIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarPlacaDeVideoIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo)
+		{
+			PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)];
+			VerificarPlacaDeVideoIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarDiscoIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayDisco>().disco == OutroPanel.GetComponentInChildren<DisplayDisco>().disco)
+		{
+			Panel.GetComponentInChildren<DisplayDisco>().disco = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)];
+			VerificarDiscoIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarFonteIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayFonte>().fonte == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte)
+		{
+			Panel.GetComponentInChildren<DisplayFonte>().fonte = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
+			VerificarFonteIgual(Panel, OutroPanel);
+		}
+	}
+
+	public void VerificarGabineteIgual(GameObject Panel, GameObject OutroPanel)
+	{
+		if (Panel.GetComponentInChildren<DisplayGabinete>().gabinete == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete)
+		{
+			Panel.GetComponentInChildren<DisplayGabinete>().gabinete = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
+			VerificarGabineteIgual(Panel, OutroPanel);
+		}
+	}
 
 	//Gera cartas aleatórias de todos os tipos baseado no canvas
 	public void IniciarCartas(GameObject PanelBaralho)
@@ -146,7 +236,7 @@ public class Manager : MonoBehaviour{
 			OponenteCartaGabineteMudou = true;
 		}
 		
-		//Prevenir que o todas as cartas sejam compatíveis no início do jogo
+		//Prevenir que todas as cartas sejam compatíveis no início do jogo
 		if (ProcessadorConectaPlacaMae(PanelBaralho) && MemoriaConectaPlacaMae(PanelBaralho) && GabineteConectaPlacaMae(PanelBaralho) && PlacaDeVideoConectaPlacaMae(PanelBaralho) && FonteConectaPlacaDeVideo(PanelBaralho))
 		{
 			//Chama a função recursivamente para iniciar as cartas de forma aleatória novamente
@@ -157,6 +247,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo placa-mãe por outra carta aleatória do mesmo tipo
 	public void TrocarPlacaMae(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if(PanelBaralho.gameObject.tag == "PlayerCard")
@@ -180,6 +281,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayPlacaMae>().placaMae != placamaeAleatoria)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
+
+				VerificarPlacaMaeIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -206,6 +309,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo processador por outra carta aleatória do mesmo tipo
 	public void TrocarProcessador(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -229,6 +343,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayProcessador>().processador != processadorAleatorio)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
+
+				VerificarProcessadorIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -255,6 +371,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo memóia por outra carta aleatória do mesmo tipo
 	public void TrocarMemoria(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -278,6 +405,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayMemoria>().memoria != memoriaAleatoria)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
+
+				VerificarMemoriaIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -304,6 +433,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo placa de vídeo por outra carta aleatória do mesmo tipo
 	public void TrocarPlacaDeVideo(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -327,6 +467,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo != placadevideoAleatoria)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
+
+				VerificarPlacaDeVideoIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -353,6 +495,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo disco por outra carta aleatória do mesmo tipo
 	public void TrocarDisco(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -376,6 +529,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayDisco>().disco != discoAleatorio)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
+
+				VerificarDiscoIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -402,6 +557,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo fonte por outra carta aleatória do mesmo tipo
 	public void TrocarFonte(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -425,6 +591,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayFonte>().fonte != fonteAleatoria)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
+
+				VerificarFonteIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -451,6 +619,17 @@ public class Manager : MonoBehaviour{
 	//Troca a carta do tipo gabinete por outra carta aleatória do mesmo tipo
 	public void TrocarGabinete(GameObject PanelBaralho)
 	{
+		GameObject OutroPanel;
+
+		if (PanelBaralho.gameObject.tag == "PlayerCard")
+		{
+			OutroPanel = PanelOponente;
+		}
+		else
+		{
+			OutroPanel = PanelJogador;
+		}
+
 		if (PodeInteragir)
 		{
 			if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -474,6 +653,8 @@ public class Manager : MonoBehaviour{
 			if (PanelBaralho.GetComponentInChildren<DisplayGabinete>().gabinete != gabineteAleatorio)
 			{
 				PanelBaralho.GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
+
+				VerificarGabineteIgual(PanelBaralho, OutroPanel);
 
 				//Informa que houve alteração na carta
 				if (PanelBaralho == PanelJogador)
@@ -743,6 +924,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararProcessador()
@@ -842,6 +1026,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararMemoria()
@@ -941,6 +1128,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararPlacaDeVideo()
@@ -1040,6 +1230,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararDisco()
@@ -1139,6 +1332,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararFonte()
@@ -1238,6 +1434,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	public static void CompararGabinete()
@@ -1337,6 +1536,9 @@ public class Manager : MonoBehaviour{
 				}
 				break;
 		}
+
+		Comparando = true;
+
 	}
 
 	#endregion

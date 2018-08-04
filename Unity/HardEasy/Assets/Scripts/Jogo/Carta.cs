@@ -10,6 +10,13 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		PosicaoOriginal = gameObject.transform.position; //Armazena a posição original da carta
 		EscalaOriginal = gameObject.GetComponent<RectTransform>().localScale; //Armazena a escala original da carta
+		CardBack.SetActive(false);
+	}
+
+	void Update()
+	{
+		//Esconder();
+		
 	}
 
 	#region Interação com o usuário
@@ -88,6 +95,46 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 		{
 			gameObject.transform.position = PosicaoOriginal;
 		}
+	}
+
+	#endregion
+
+	#region Esconder as cartas
+
+	public GameObject CardBack;
+
+	public void Esconder()
+	{
+		if (gameObject.transform.parent.tag != "Drop")
+		{
+			if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+			{
+				if (gameObject.tag == "PlayerCard")
+				{
+					CardBack.SetActive(false);
+				}
+				else
+				{
+					CardBack.SetActive(true);
+				}
+			}
+			else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+			{
+				if (gameObject.tag == "OpponentCard")
+				{
+					CardBack.SetActive(false);
+				}
+				else
+				{
+					CardBack.SetActive(true);
+				}
+			}
+		}
+		else
+		{
+			CardBack.SetActive(false);
+		}
+		
 	}
 
 	#endregion
