@@ -143,7 +143,6 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 		{
 			CardBack.SetActive(false);
 		}
-		
 	}
 
 	//Força as cartas a estarem sempre na sua posição original quando não for a vez do jogador e quando a carta não estiver sendo comparada

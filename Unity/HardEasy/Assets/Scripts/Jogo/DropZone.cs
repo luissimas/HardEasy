@@ -163,7 +163,6 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		}
 
 		Manager.Comparando = true;
-		Manager.PodeInteragir = true;
 	}
 
 	#endregion

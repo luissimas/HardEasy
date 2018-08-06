@@ -81,8 +81,6 @@ public class Manager : MonoBehaviour{
 	//Avança para o próximo estado baseado no estado e nas condições de jogo atuais
 	public void ProximoEstado()
 	{
-		PodeInteragir = false;
-
 		//Verifica em qual estado o jogo está no momento
 		if (EstadoAtual == Estados.VezDoJogador)
 		{
@@ -100,7 +98,7 @@ public class Manager : MonoBehaviour{
 				EstadoAtual = Estados.VezDoOponente;
 			}
 		}
-		else if (EstadoAtual==Estados.VezDoOponente)
+		else if (EstadoAtual == Estados.VezDoOponente)
 		{
 			//Verifica se o oponente venceu o jogo
 			if ((ProcessadorConectaPlacaMae(PanelOponente) && MemoriaConectaPlacaMae(PanelOponente) && GabineteConectaPlacaMae(PanelOponente)
@@ -281,6 +279,8 @@ public class Manager : MonoBehaviour{
 					}
 				}
 
+				PodeInteragir = false;
+
 				GameObject OutroPanel;
 
 				if (PanelBaralho.gameObject.tag == "PlayerCard")
@@ -291,8 +291,6 @@ public class Manager : MonoBehaviour{
 				{
 					OutroPanel = PanelJogador;
 				}
-
-				PodeInteragir = false;
 
 				PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
 
@@ -321,6 +319,7 @@ public class Manager : MonoBehaviour{
 					PodeInteragir = true;
 					TrocarPlacaMae(PanelBaralho);
 				}
+
 				//Avança para o próximo estado e adiciona uma rodada			
 				Invoke("ProximoEstado", 2);
 			}
@@ -349,6 +348,7 @@ public class Manager : MonoBehaviour{
 					}
 
 				}
+
 				PodeInteragir = false;
 
 				GameObject OutroPanel;
