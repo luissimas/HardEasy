@@ -15,19 +15,21 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	void Update()
 	{
 		Esconder();
-		
+		Posicionar();
 	}
 
 	#region Interação com o usuário
 	Vector3 PosicaoOriginal;
 	Vector3 EscalaOriginal;
 
+	public GameObject PanelJogador;
+	public GameObject PanelOponente;
+
 	//Identifica se o mouse entrou em cima do objeto
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if (Manager.PodeInteragir)
+		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
 		{
-			if(transform.parent.tag != "Drop")
 			//Verifica a tag do objeto
 			if (gameObject.tag == "PlayerCard")
 			{
@@ -47,38 +49,41 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	//Identifica se o mouse saiu de cima do objeto
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		if (Manager.PodeInteragir)
+		if(transform.parent.tag != "Drop")
 		{
-			if(transform.parent.tag != "Drop")
-			{
-				gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
-				gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
-			}
+			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
+			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
 		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		if (Manager.PodeInteragir)
+		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
 		{
-			gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false; //Bloqueia todos os raycasts da carta, permitindo que a drop zone identifique que a carta foi colocada
+			if (Manager.PodeInteragir)
+			{
+				gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false; //Bloqueia todos os raycasts da carta, permitindo que a drop zone identifique que a carta foi colocada
+			}
 		}
 	}
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		if (Manager.PodeInteragir)
+		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
 		{
-			if (transform.parent.tag != "Drop")
+			if (Manager.PodeInteragir)
 			{
-				gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
+				if (transform.parent.tag != "Drop")
+				{
+					gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
+				}
 			}
 		}
 	}
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
-		if (Manager.PodeInteragir)
+		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
 		{
 			if (transform.parent.tag != "Drop")
 			{
@@ -92,13 +97,18 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (transform.parent.tag != "Drop")
 		{
-			gameObject.transform.position = PosicaoOriginal;
+			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
+			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
+		}
+		else
+		{
+			gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.5, (float)0.5); //Aumenta a escala do objeto
 		}
 	}
 
 	#endregion
 
-	#region Esconder as cartas
+	#region Card back and position
 
 	public GameObject CardBack;
 
@@ -134,6 +144,16 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			CardBack.SetActive(false);
 		}
 		
+	}
+
+	//Força as cartas a estarem sempre na sua posição original quando não for a vez do jogador e quando a carta não estiver sendo comparada
+	public void Posicionar()
+	{
+		if((!(((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))) && (transform.parent.tag != "Drop"))
+		{
+			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
+			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
+		}
 	}
 
 	#endregion

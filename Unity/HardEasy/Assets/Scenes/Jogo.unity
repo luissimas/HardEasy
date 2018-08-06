@@ -222,7 +222,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -150
+  m_Spacing: -100
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -437,6 +437,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114096669902565868, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114096669902565868, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879bcf94c563c6e459fb3437fd85150e, type: 2}
   m_IsPrefabAsset: 0
@@ -647,6 +657,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114791117696840136, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114791117696840136, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1085f27fdc4c493459baaf28e205698a, type: 2}
   m_IsPrefabAsset: 0
@@ -1038,6 +1058,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114822100554124720, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114822100554124720, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69889fb55e2fcf649ba814e8eaaa116c, type: 2}
   m_IsPrefabAsset: 0
@@ -1222,6 +1252,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114926709413943794, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114926709413943794, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65de95f456ebac3448f78b66fae801b4, type: 2}
   m_IsPrefabAsset: 0
@@ -1730,6 +1770,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114610516807168162, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114610516807168162, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac09b201d83fdae4eb0fd91e998aef5f, type: 2}
   m_IsPrefabAsset: 0
@@ -1915,6 +1965,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114933365707856168, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114933365707856168, guid: 9982fc4d7bb47f4429f79aa7ec437fe9,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9982fc4d7bb47f4429f79aa7ec437fe9, type: 2}
   m_IsPrefabAsset: 0
@@ -2125,6 +2185,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114996938667407114, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114996938667407114, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70c207f5731ab140a35c078a9e7bc65, type: 2}
   m_IsPrefabAsset: 0
@@ -2395,6 +2465,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114085194693856518, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114085194693856518, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf930dac59a0b8f4089fee16a7c7db1f, type: 2}
   m_IsPrefabAsset: 0
@@ -2600,6 +2680,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114067206815129616, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114067206815129616, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547f1e33980aaaf4f9913a13e252e0be, type: 2}
   m_IsPrefabAsset: 0
@@ -2780,6 +2870,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114478431889045706, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114478431889045706, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f1cffb6a9c72a46b6fb191c3e04749, type: 2}
   m_IsPrefabAsset: 0
@@ -2980,6 +3080,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114712820271477138, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114712820271477138, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10c0bb291ff31e4cb9ad5c358ee2146, type: 2}
   m_IsPrefabAsset: 0
@@ -3211,6 +3321,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114483102431676174, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114483102431676174, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf1d0ff1527ba041a7118716abf3211, type: 2}
   m_IsPrefabAsset: 0
@@ -3411,6 +3531,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114814982663210898, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114814982663210898, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a23538c24345947b4c2529b93c30d3, type: 2}
   m_IsPrefabAsset: 0
@@ -3838,6 +3968,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114196431851851248, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: PanelJogador
+      value: 
+      objectReference: {fileID: 769429637}
+    - target: {fileID: 114196431851851248, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: PanelOponente
+      value: 
+      objectReference: {fileID: 703475131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35ea0017d05c1d499543065fc6c471a, type: 2}
   m_IsPrefabAsset: 0
