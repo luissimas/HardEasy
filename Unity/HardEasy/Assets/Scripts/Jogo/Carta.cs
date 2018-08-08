@@ -34,13 +34,13 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			if (gameObject.tag == "PlayerCard")
 			{
 				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.5, (float)0.5); //Aumenta a escala do objeto
+				gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal + new Vector3((float)0.2, (float)0.2); //Aumenta a escala do objeto
 				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y + 20));
 			}
 			else if (gameObject.tag == "OpponentCard")
 			{
 				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.5, (float)0.5); //Aumenta a escala do objeto
+				gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal + new Vector3((float)0.2, (float)0.2); //Aumenta a escala do objeto
 				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y - 20));
 			}
 		}
@@ -49,7 +49,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	//Identifica se o mouse saiu de cima do objeto
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		if(transform.parent.tag != "Drop")
+		if((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 		{
 			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
 			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
@@ -73,7 +73,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 		{
 			if (Manager.PodeInteragir)
 			{
-				if (transform.parent.tag != "Drop")
+				if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 				{
 					gameObject.transform.position = eventData.position; //Associa a posição da carta com a posição do mouse
 				}
@@ -85,7 +85,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
 		{
-			if (transform.parent.tag != "Drop")
+			if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 			{
 				gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true; //Desbloqueia os raycasts da carta, permitindo a interação novamente
 				gameObject.transform.position = PosicaoOriginal; //Retorna a carta para a posição original
@@ -95,14 +95,14 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
 	private void OnTransformParentChanged()
 	{
-		if (transform.parent.tag != "Drop")
+		if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 		{
 			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
 			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal
 		}
 		else
 		{
-			gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.5, (float)0.5); //Aumenta a escala do objeto
+			gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3((float)0.45, (float)0.45); //Aumenta a escala do objeto
 		}
 	}
 
@@ -114,7 +114,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
 	public void Esconder()
 	{
-		if (gameObject.transform.parent.tag != "Drop")
+		if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 		{
 			if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
 			{
@@ -148,7 +148,8 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	//Força as cartas a estarem sempre na sua posição original quando não for a vez do jogador e quando a carta não estiver sendo comparada
 	public void Posicionar()
 	{
-		if((!(((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))) && (transform.parent.tag != "Drop"))
+		if((!(((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) 
+			&& (Manager.OponentePodeInteragir)))) && ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar")))
 		{
 			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
 			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal

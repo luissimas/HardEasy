@@ -16,15 +16,13 @@ public class Manager : MonoBehaviour{
 	{
 		GerenciadorDeRodadas(); //Verifica o gerenciador de rodadas a cada frame
 		ProximoEstadoAoComparar(); //Avança uma rodada sempre que as cartas forem comparadas
+		ProximoEstadoAoTrocar(); //Avança uma rodada sempre que as cartas forem trocadas
 
 		HardCashJogadorText.text = HardCashJogador.ToString();
 		HardCashOponenteText.text = HardCashOponente.ToString();
 	}
 
 	#region Interação do Usuário
-
-	public GameObject DropAreaInspector;
-	public static GameObject DropArea;
 
 	public TMP_Text HardCashJogadorText, HardCashOponenteText;
 
@@ -33,6 +31,7 @@ public class Manager : MonoBehaviour{
 	public static bool PodeInteragir = true;
 
 	public static bool Comparando = false; //Variável para gerenciar se as cartas estão sendo comparadas ou não
+	public static bool Trocando = false; //Variável para gerenciar se as cartas estão sendo trocadas ou não
 
 	public static int HardCashJogador = 0;
 	public static int HardCashOponente = 0;
@@ -55,7 +54,6 @@ public class Manager : MonoBehaviour{
 		{
 			case (Estados.Inicio):
 				Lista.CarregarListas(); //Carega as listas dos componentes
-				DropArea = DropAreaInspector;
 				IniciarCartas(PanelJogador); //Embaralha e inicia as cartas do jogador
 				IniciarCartas(PanelOponente); //Embaralha e inicia as cartas do oponente
 				VerificarSeAsCartasSaoIguais(PanelJogador, PanelOponente); //Verifica se as cartas do jogador e do oponente são iguais
@@ -124,6 +122,16 @@ public class Manager : MonoBehaviour{
 		if (Comparando)
 		{
 			Comparando = false;
+			ProximoEstado();
+		}
+	}
+
+	//Avança para o próximo estado após uma troca de cartas
+	public void ProximoEstadoAoTrocar()
+	{
+		if (Trocando)
+		{
+			Trocando = false;
 			ProximoEstado();
 		}
 	}
@@ -209,7 +217,7 @@ public class Manager : MonoBehaviour{
 
 	#endregion
 
-	#region Iniciar e trocar as cartas
+	#region Iniciar as cartas
 
 	public GameObject PanelJogador, PanelOponente;  //Variáveis que recebem o canvas do jogador e do oponente
 	//Variáveis para identificar se houve mudança nas cartas
@@ -254,477 +262,6 @@ public class Manager : MonoBehaviour{
 		{
 			//Chama a função recursivamente para iniciar as cartas de forma aleatória novamente
 			IniciarCartas(PanelBaralho);
-		}
-	}
-
-	//Troca a carta do tipo placa-mãe por outra carta aleatória do mesmo tipo
-	public void TrocarPlacaMae(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
-
-				//Verifica se a placa-mãe selecionada aleatoriamente é diferente da placa-mãe ativa
-				if ((PanelBaralho.GetComponentInChildren<DisplayPlacaMae>().placaMae != placamaeAleatoria) && (OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae != placamaeAleatoria))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
-
-					//VerificarPlacaMaeIgual(PanelBaralho, OutroPanel);
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaPlacaMaeMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaPlacaMaeMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarPlacaMae(PanelBaralho);
-				}
-
-				//Avança para o próximo estado e adiciona uma rodada			
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo processador por outra carta aleatória do mesmo tipo
-	public void TrocarProcessador(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				Processador processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)]; //Gera um processado aleatório da lista
-
-				//Verifica se o processador selecionado aleatoriamente é diferente do processador ativo
-				if ((PanelBaralho.GetComponentInChildren<DisplayProcessador>().processador != processadorAleatorio) && (OutroPanel.GetComponentInChildren<DisplayProcessador>().processador != processadorAleatorio))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
-
-					//VerificarProcessadorIgual(PanelBaralho, OutroPanel);
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaProcessadorMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaProcessadorMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarProcessador(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo memóia por outra carta aleatória do mesmo tipo
-	public void TrocarMemoria(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				Memoria memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)]; //Gera uma memória aleatória da lista
-
-				//Verfica se a memória selecionada aleatoriamente é diferente da memória ativa
-				if ((PanelBaralho.GetComponentInChildren<DisplayMemoria>().memoria != memoriaAleatoria) && (OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria != memoriaAleatoria))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
-
-					//VerificarMemoriaIgual(PanelBaralho, OutroPanel);
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaMemoriaMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaMemoriaMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarMemoria(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo placa de vídeo por outra carta aleatória do mesmo tipo
-	public void TrocarPlacaDeVideo(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				PlacaDeVideo placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)]; //Gera uma placa de vídeo aleatória da lista
-
-				//Verifica se a placa de vídeo selecionada aleatoriamente é diferente da placa de vídeo ativa
-				if ((PanelBaralho.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo != placadevideoAleatoria) && (OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo != placadevideoAleatoria))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaPlacaDeVideoMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaPlacaDeVideoMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarPlacaDeVideo(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo disco por outra carta aleatória do mesmo tipo
-	public void TrocarDisco(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				Disco discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)]; //Gera um disco aleatório da lista
-
-				//Verifica se o disco selecionado aleatoriamente é diferente do disco ativo
-				if ((PanelBaralho.GetComponentInChildren<DisplayDisco>().disco != discoAleatorio) && (OutroPanel.GetComponentInChildren<DisplayDisco>().disco != discoAleatorio))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaDiscoMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaDiscoMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarDisco(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo fonte por outra carta aleatória do mesmo tipo
-	public void TrocarFonte(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-				
-				Fonte fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)]; //Gera uma fonte aleatória da lista
-
-				//Verifica se a fonte selecionada aleatoriamente é diferente da fonte ativa
-				if ((PanelBaralho.GetComponentInChildren<DisplayFonte>().fonte != fonteAleatoria) && (OutroPanel.GetComponentInChildren<DisplayFonte>().fonte != fonteAleatoria))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaFonteMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaFonteMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarFonte(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
-		}
-	}
-
-	//Troca a carta do tipo gabinete por outra carta aleatória do mesmo tipo
-	public void TrocarGabinete(GameObject PanelBaralho)
-	{
-		if (PodeInteragir)
-		{
-			if (((PanelBaralho == PanelJogador) && (JogadorPodeInteragir)) || ((PanelBaralho == PanelOponente) && (OponentePodeInteragir)))
-			{
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					if (HardCashJogador == 0)
-					{
-						return;
-					}
-				}
-				else if (PanelBaralho.gameObject.tag == "OpponentCard")
-				{
-					if (HardCashOponente == 0)
-					{
-						return;
-					}
-				}
-
-				PodeInteragir = false;
-
-				GameObject OutroPanel;
-
-				if (PanelBaralho.gameObject.tag == "PlayerCard")
-				{
-					OutroPanel = PanelOponente;
-				}
-				else
-				{
-					OutroPanel = PanelJogador;
-				}
-
-				Gabinete gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)]; //Gera um gabinete aleatório da lista
-
-				//Verifica se o gabinete selecionado aleatoriamente é diferente do gabinete ativo
-				if ((PanelBaralho.GetComponentInChildren<DisplayGabinete>().gabinete != gabineteAleatorio) && (OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete != gabineteAleatorio))
-				{
-					PanelBaralho.GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
-
-					//Informa que houve alteração na carta
-					if (PanelBaralho == PanelJogador)
-					{
-						JogadorCartaGabineteMudou = true;
-						HardCashJogador--;
-					}
-					else if (PanelBaralho == PanelOponente)
-					{
-						OponenteCartaGabineteMudou = true;
-						HardCashOponente--;
-					}
-				}
-				else
-				{
-					//Chama a função recursivamente para gerar outro componente de forma aleatoria
-					PodeInteragir = true;
-					TrocarGabinete(PanelBaralho);
-				}
-				//Avança para o próximo estado e adiciona uma rodada
-				Invoke("ProximoEstado", 2);
-			}
 		}
 	}
 
