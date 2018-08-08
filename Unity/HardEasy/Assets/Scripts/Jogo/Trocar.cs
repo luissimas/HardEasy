@@ -31,6 +31,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 				if (Manager.PodeInteragir)
 				{
 					Manager.PodeInteragir = false;
+					NaoTemHardcash = false;
 					eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
 					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false;
 
