@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
 	#region Drag and Drop
 
 	public GameObject PanelJogador, PanelOponente;
+	[HideInInspector] public bool Comparou = false;
+	public int RodadasAteComparar;
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
@@ -29,98 +30,155 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (Manager.PodeInteragir)
 				{
 					Manager.PodeInteragir = false;
+					Comparou = false;
 					eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
-						if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
+						if((((RodadaPlacaMaeJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaMaeJogador) < RodadasAteComparar)))) || 
+							((RodadaPlacaMaeOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaMaeOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararPlacaMae", 2);
+							Invoke("CompararPlacaMae", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
 					{
-						if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
+						if ((((RodadaProcessadorJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaProcessadorJogador) < RodadasAteComparar)))) || 
+							((RodadaProcessadorOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaProcessadorOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararProcessador", 2);
+							Invoke("CompararProcessador", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
 					{
-						if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
+						if ((((RodadaMemoriaJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaMemoriaJogador) < RodadasAteComparar)))) ||
+							((RodadaMemoriaOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaMemoriaOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararMemoria", 2);
+							Invoke("CompararMemoria", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
 					{
-						if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
+						if ((((RodadaPlacaDeVideoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteComparar)))) ||
+							((RodadaPlacaDeVideoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararPlacaDeVideo", 2);
+							Invoke("CompararPlacaDeVideo", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
 					{
-						if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
+						if ((((RodadaDiscoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaDiscoJogador) < RodadasAteComparar)))) ||
+							((RodadaDiscoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaDiscoOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararDisco", 2);
+							Invoke("CompararDisco", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
 					{
-						if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
+						if ((((RodadaFonteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaFonteJogador) < RodadasAteComparar)))) ||
+							((RodadaFonteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaFonteOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararFonte", 2);
+							Invoke("CompararFonte", 2);
+						}
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
 					{
-						if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
+						if ((((RodadaGabineteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaGabineteJogador) < RodadasAteComparar)))) ||
+							((RodadaGabineteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaGabineteOponente) < RodadasAteComparar)))))
 						{
-							PanelOponente.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
+							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
-						else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
+						else
 						{
-							PanelJogador.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
-						}
+							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
+							{
+								PanelOponente.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
+							}
+							else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
+							{
+								PanelJogador.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
+							}
 
-						Invoke("CompararGabinete", 2);
+							Invoke("CompararGabinete", 2);
+						}
 					}
 
 					for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
@@ -153,12 +211,22 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		Manager.Comparando = true;
+		if (Comparou)
+		{
+			Manager.Comparando = true;
+		}
+		else
+		{
+			Manager.PodeInteragir = true;
+		}
 	}
 
 	#endregion
 
 	#region Comparação de Atributos
+
+	[HideInInspector] public int RodadaPlacaMaeJogador = 0, RodadaProcessadorJogador = 0, RodadaMemoriaJogador = 0, RodadaPlacaDeVideoJogador = 0, RodadaDiscoJogador = 0, RodadaFonteJogador = 0, RodadaGabineteJogador = 0; //Variáveis para armazenar a última rodada em que o jogador comparou determinada carta
+	[HideInInspector] public int RodadaPlacaMaeOponente = 0, RodadaProcessadorOponente = 0, RodadaMemoriaOponente = 0, RodadaPlacaDeVideoOponente = 0, RodadaDiscoOponente = 0, RodadaFonteOponente = 0, RodadaGabineteOponente = 0; //Variáveis para armazenar a útlima rodada em que o oponente comparou determinada carta
 
 	public void CompararPlacaMae()
 	{
@@ -177,6 +245,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				CartaOponente = GetComponentsInChildren<DisplayPlacaMae>()[i];
 			}
 		}
+
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaPlacaMaeJogador = Manager.Rodada;
+		}
+		else if(Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaPlacaMaeOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
 
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
@@ -277,6 +356,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaProcessadorJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaProcessadorOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
+
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
 		{
@@ -375,6 +465,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				CartaOponente = GetComponentsInChildren<DisplayMemoria>()[i];
 			}
 		}
+
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaMemoriaJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaMemoriaOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
 
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
@@ -475,6 +576,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaPlacaDeVideoJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaPlacaDeVideoOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
+
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
 		{
@@ -573,6 +685,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				CartaOponente = GetComponentsInChildren<DisplayDisco>()[i];
 			}
 		}
+
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaDiscoJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaDiscoOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
 
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
@@ -673,6 +796,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaFonteJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaFonteOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
+
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
 		{
@@ -772,6 +906,17 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
+		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		{
+			RodadaGabineteJogador = Manager.Rodada;
+		}
+		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		{
+			RodadaGabineteOponente = Manager.Rodada;
+		}
+
+		Comparou = true;
+
 		//Compara as cartas se baseando no atributo gerado aleatoriamente
 		switch (atributoIndex)
 		{
@@ -854,5 +999,4 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 	}
 
 	#endregion
-
 }

@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Manager : MonoBehaviour{
-
-	void Start() 
+public class Manager : MonoBehaviour
+{
+	void Start()
 	{
 		EstadoAtual = Estados.Inicio; //Inicia o jogo no estado de início
 	}
@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour{
 	void Update()
 	{
 		GerenciadorDeRodadas(); //Verifica o gerenciador de rodadas a cada frame
+		TimerManager();
 		ProximoEstadoAoComparar(); //Avança uma rodada sempre que as cartas forem comparadas
 		ProximoEstadoAoTrocar(); //Avança uma rodada sempre que as cartas forem trocadas
 
@@ -25,6 +26,7 @@ public class Manager : MonoBehaviour{
 	#region Interação do Usuário
 
 	public TMP_Text HardCashJogadorText, HardCashOponenteText;
+	public TMP_Text TimerText;
 
 	public static bool JogadorPodeInteragir = false;
 	public static bool OponentePodeInteragir = false;
@@ -40,15 +42,17 @@ public class Manager : MonoBehaviour{
 
 	#region Sistema de Rodadas
 
-	[HideInInspector] public enum Estados {Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
+	[HideInInspector] public enum Estados { Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
 
 	public static Estados EstadoAtual; //Variável para identificar o estado atual do jogo
 	public static int Rodada = 0; //Variável para identificar em qual rodada o jogo está
 
+	[HideInInspector] public int TempoDaRodada = 31; //Variável para controlar o tempo da rodada atual
+	[HideInInspector] public bool EstadoMudou;
+
 	//Gerencia o sistema de rodadas 
 	public void GerenciadorDeRodadas()
 	{
-		Debug.Log(EstadoAtual);
 		//Identifica qual o estado atual do jogo
 		switch (EstadoAtual)
 		{
@@ -57,6 +61,7 @@ public class Manager : MonoBehaviour{
 				IniciarCartas(PanelJogador); //Embaralha e inicia as cartas do jogador
 				IniciarCartas(PanelOponente); //Embaralha e inicia as cartas do oponente
 				VerificarSeAsCartasSaoIguais(PanelJogador, PanelOponente); //Verifica se as cartas do jogador e do oponente são iguais
+				EstadoMudou = true;
 				Rodada++; //Avança uma rodada
 				EstadoAtual = EstadoAtual + Random.Range(1, 3); //Escolhe quem irá começar jogando de forma aleatória
 				break;
@@ -74,6 +79,7 @@ public class Manager : MonoBehaviour{
 				PodeInteragir = false;
 				break;
 		}
+
 	}
 
 	//Avança para o próximo estado baseado no estado e nas condições de jogo atuais
@@ -83,7 +89,7 @@ public class Manager : MonoBehaviour{
 		if (EstadoAtual == Estados.VezDoJogador)
 		{
 			//Verifica se o jogador venceu o jogo
-			if ((ProcessadorConectaPlacaMae(PanelJogador) && MemoriaConectaPlacaMae(PanelJogador) && GabineteConectaPlacaMae(PanelJogador) 
+			if ((ProcessadorConectaPlacaMae(PanelJogador) && MemoriaConectaPlacaMae(PanelJogador) && GabineteConectaPlacaMae(PanelJogador)
 				&& PlacaDeVideoConectaPlacaMae(PanelJogador) && FonteConectaPlacaDeVideo(PanelJogador)))
 			{
 				//Finaliza o jogo
@@ -113,6 +119,7 @@ public class Manager : MonoBehaviour{
 			}
 		}
 
+		EstadoMudou = true;
 		PodeInteragir = true;
 	}
 
@@ -133,6 +140,43 @@ public class Manager : MonoBehaviour{
 		{
 			Trocando = false;
 			ProximoEstado();
+		}
+	}
+
+	//Gerencia o timer
+	public void TimerManager()
+	{
+		if (EstadoMudou)
+		{
+			CancelInvoke("Timer");
+			TempoDaRodada = 31;
+			EstadoMudou = false;
+			InvokeRepeating("Timer", (float)0.0, (float)1.0);
+		}
+	}
+
+	//Começa a contar a partir de 30 e avança para a próxima rodada caso o tempo se esgote
+	public void Timer()
+	{
+		if (TempoDaRodada == 0)
+		{
+			CancelInvoke("Timer");
+			ProximoEstado();
+		}
+		else
+		{
+			TempoDaRodada--;
+
+			if(TempoDaRodada < 10)
+			{
+				TimerText.text = "0" + TempoDaRodada.ToString();
+				TimerText.color = Color.red;
+			}
+			else
+			{
+				TimerText.text = TempoDaRodada.ToString();
+				TimerText.color = Color.white;
+			}
 		}
 	}
 
@@ -220,8 +264,9 @@ public class Manager : MonoBehaviour{
 	#region Iniciar as cartas
 
 	public GameObject PanelJogador, PanelOponente;  //Variáveis que recebem o canvas do jogador e do oponente
+
 	//Variáveis para identificar se houve mudança nas cartas
-	public static bool JogadorCartaPlacaMaeMudou = false, JogadorCartaProcessadorMudou = false, JogadorCartaMemoriaMudou = false, JogadorCartaPlacaDeVideoMudou = false, JogadorCartaDiscoMudou = false, JogadorCartaFonteMudou = false, JogadorCartaGabineteMudou = false; 
+	public static bool JogadorCartaPlacaMaeMudou = false, JogadorCartaProcessadorMudou = false, JogadorCartaMemoriaMudou = false, JogadorCartaPlacaDeVideoMudou = false, JogadorCartaDiscoMudou = false, JogadorCartaFonteMudou = false, JogadorCartaGabineteMudou = false;
 	public static bool OponenteCartaPlacaMaeMudou = false, OponenteCartaProcessadorMudou = false, OponenteCartaMemoriaMudou = false, OponenteCartaPlacaDeVideoMudou = false, OponenteCartaDiscoMudou = false, OponenteCartaFonteMudou = false, OponenteCartaGabineteMudou = false;
 
 	//Gera cartas aleatórias de todos os tipos baseado no canvas
@@ -235,6 +280,14 @@ public class Manager : MonoBehaviour{
 		PanelBaralho.GetComponentInChildren<DisplayFonte>().fonte = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
 		PanelBaralho.GetComponentInChildren<DisplayGabinete>().gabinete = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
 
+
+		//Prevenir que todas as cartas sejam compatíveis no início do jogo
+		if (ProcessadorConectaPlacaMae(PanelBaralho) && MemoriaConectaPlacaMae(PanelBaralho) && GabineteConectaPlacaMae(PanelBaralho) && PlacaDeVideoConectaPlacaMae(PanelBaralho) && FonteConectaPlacaDeVideo(PanelBaralho))
+		{
+			//Chama a função recursivamente para iniciar as cartas de forma aleatória novamente
+			IniciarCartas(PanelBaralho);
+		}
+
 		//Informa que houve alteração nas cartas
 		if (PanelBaralho == PanelJogador)
 		{
@@ -246,7 +299,7 @@ public class Manager : MonoBehaviour{
 			JogadorCartaFonteMudou = true;
 			JogadorCartaGabineteMudou = true;
 		}
-		else if(PanelBaralho == PanelOponente)
+		else if (PanelBaralho == PanelOponente)
 		{
 			OponenteCartaPlacaMaeMudou = true;
 			OponenteCartaProcessadorMudou = true;
@@ -255,13 +308,6 @@ public class Manager : MonoBehaviour{
 			OponenteCartaDiscoMudou = true;
 			OponenteCartaFonteMudou = true;
 			OponenteCartaGabineteMudou = true;
-		}
-		
-		//Prevenir que todas as cartas sejam compatíveis no início do jogo
-		if (ProcessadorConectaPlacaMae(PanelBaralho) && MemoriaConectaPlacaMae(PanelBaralho) && GabineteConectaPlacaMae(PanelBaralho) && PlacaDeVideoConectaPlacaMae(PanelBaralho) && FonteConectaPlacaDeVideo(PanelBaralho))
-		{
-			//Chama a função recursivamente para iniciar as cartas de forma aleatória novamente
-			IniciarCartas(PanelBaralho);
 		}
 	}
 
@@ -305,10 +351,10 @@ public class Manager : MonoBehaviour{
 			PlacaMae placamae = Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae;
 
 			//Compara o DDR da memória ativa com o DDR da placa-mãe ativa
-			if(memoria.DDR.Trim().ToLowerInvariant() == placamae.DDR.Trim().ToLowerInvariant())
+			if (memoria.DDR.Trim().ToLowerInvariant() == placamae.DDR.Trim().ToLowerInvariant())
 			{
 				//Compara a quantidade de memória suportada pela placa-mãe ativa com a quantidade de memória da memória ativa
-				if(placamae.QuantidadeMemoria >= memoria.QuantidadeMemoria)
+				if (placamae.QuantidadeMemoria >= memoria.QuantidadeMemoria)
 				{
 					return (true);
 				}
@@ -365,7 +411,7 @@ public class Manager : MonoBehaviour{
 			PlacaMae placamae = Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae;
 
 			//Compara o suporte de SLI/Crossfire da placa-mãe com o SLI/Crossfire da placa de vídeo
-			if(((placamae.SuporteSLI == placadevideo.SLI) || ((placamae.SuporteSLI == true) && (placadevideo.SLI == false))) && 
+			if (((placamae.SuporteSLI == placadevideo.SLI) || ((placamae.SuporteSLI == true) && (placadevideo.SLI == false))) &&
 				((placamae.SuporteCrossfire == placadevideo.Crossfire) || ((placamae.SuporteCrossfire == true) && (placadevideo.Crossfire == false))))
 			{
 				return (true);

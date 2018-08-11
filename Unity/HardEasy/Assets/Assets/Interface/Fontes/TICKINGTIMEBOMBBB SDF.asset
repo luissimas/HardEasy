@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -964,7 +964,7 @@ MonoBehaviour:
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TICKINGTIMEBOMBBB SDF Material
   m_Shader: {fileID: 4800000, guid: dca26082f9cb439469295791d9f76fe5, type: 3}
@@ -1065,7 +1065,7 @@ Material:
 --- !u!28 &28807831745519752
 Texture2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TICKINGTIMEBOMBBB SDF Atlas
   m_ImageContentsHash:
@@ -1080,6 +1080,8 @@ Texture2D:
   m_TextureFormat: 1
   m_MipCount: 1
   m_IsReadable: 0
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
   m_AlphaIsTransparency: 0
   m_ImageCount: 1
   m_TextureDimension: 2
