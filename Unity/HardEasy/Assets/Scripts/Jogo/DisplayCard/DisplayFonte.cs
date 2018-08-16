@@ -35,7 +35,7 @@ public class DisplayFonte : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaFonteMudou)
+			if (Informacoes.JogadorCartaFonteMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoPotencia();
@@ -43,12 +43,12 @@ public class DisplayFonte : MonoBehaviour{
 				GerarAtributoCustoPorW();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaFonteMudou = false;
+				Informacoes.JogadorCartaFonteMudou = false;
 			}
 		}
 		else if (gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaFonteMudou)
+			if (Informacoes.OponenteCartaFonteMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoPotencia();
@@ -56,7 +56,7 @@ public class DisplayFonte : MonoBehaviour{
 				GerarAtributoCustoPorW();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaFonteMudou = false;
+				Informacoes.OponenteCartaFonteMudou = false;
 			}
 		}
 	}

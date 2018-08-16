@@ -119,7 +119,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	{
 		if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 		{
-			if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+			if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 			{
 				if (gameObject.tag == "PlayerCard")
 				{
@@ -130,7 +130,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 					CardBack.SetActive(true);
 				}
 			}
-			else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+			else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 			{
 				if (gameObject.tag == "OpponentCard")
 				{

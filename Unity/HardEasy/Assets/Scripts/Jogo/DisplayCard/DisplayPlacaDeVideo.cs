@@ -37,7 +37,7 @@ public class DisplayPlacaDeVideo : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaPlacaDeVideoMudou)
+			if (Informacoes.JogadorCartaPlacaDeVideoMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenho();
@@ -45,12 +45,12 @@ public class DisplayPlacaDeVideo : MonoBehaviour{
 				GerarAtributoConsumo();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaPlacaDeVideoMudou = false;
+				Informacoes.JogadorCartaPlacaDeVideoMudou = false;
 			}
 		}
 		else if(gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaPlacaDeVideoMudou)
+			if (Informacoes.OponenteCartaPlacaDeVideoMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenho();
@@ -58,7 +58,7 @@ public class DisplayPlacaDeVideo : MonoBehaviour{
 				GerarAtributoConsumo();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaPlacaDeVideoMudou = false;
+				Informacoes.OponenteCartaPlacaDeVideoMudou = false;
 			}
 		}
 			

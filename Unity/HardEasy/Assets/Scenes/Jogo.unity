@@ -3582,6 +3582,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1951469630}
   - component: {fileID: 1951469629}
+  - component: {fileID: 1951469635}
+  - component: {fileID: 1951469634}
+  - component: {fileID: 1951469633}
+  - component: {fileID: 1951469632}
+  - component: {fileID: 1951469631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3600,13 +3605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e107590cab7a6eb458aecf763fddc079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardCashJogadorText: {fileID: 97727791}
-  HardCashOponenteText: {fileID: 1444238972}
-  TimerText: {fileID: 943103053}
-  TempoDaRodada: 30
-  EstadoMudou: 0
-  PanelJogador: {fileID: 769429637}
-  PanelOponente: {fileID: 703475131}
 --- !u!4 &1951469630
 Transform:
   m_ObjectHideFlags: 0
@@ -3620,6 +3618,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951469631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951469628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f423c18c4930e36408ae761b551b7b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HardCashJogadorText: {fileID: 97727791}
+  HardCashOponenteText: {fileID: 1444238972}
+--- !u!114 &1951469632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951469628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c37fefab57ff042ba8d96f2866a29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1951469633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951469628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124956976fe26ac4da4137ad320cfb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerText: {fileID: 943103053}
+--- !u!114 &1951469634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951469628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312a4c8723fea0a4e9dca201d5df9b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelJogadorInspector: {fileID: 769429637}
+  PanelOponenteInspector: {fileID: 703475131}
+--- !u!114 &1951469635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951469628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5641327bd3834cb44b0b163e32f50b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2086132866
 Prefab:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class DisplayProcessador : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if(gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaProcessadorMudou)
+			if (Informacoes.JogadorCartaProcessadorMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenhoSingleCore();
@@ -46,12 +46,12 @@ public class DisplayProcessador : MonoBehaviour{
 				GerarAtributoConsumo();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaProcessadorMudou = false;
+				Informacoes.JogadorCartaProcessadorMudou = false;
 			}
 		}
 		else if(gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaProcessadorMudou)
+			if (Informacoes.OponenteCartaProcessadorMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenhoSingleCore();
@@ -59,7 +59,7 @@ public class DisplayProcessador : MonoBehaviour{
 				GerarAtributoConsumo();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaProcessadorMudou = false;
+				Informacoes.OponenteCartaProcessadorMudou = false;
 			}
 		}
 

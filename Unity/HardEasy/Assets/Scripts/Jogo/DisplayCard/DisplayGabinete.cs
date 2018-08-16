@@ -36,7 +36,7 @@ public class DisplayGabinete : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaGabineteMudou)
+			if (Informacoes.JogadorCartaGabineteMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoRefrigeracao();
@@ -44,12 +44,12 @@ public class DisplayGabinete : MonoBehaviour{
 				GerarAtributoBaiasHD();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaGabineteMudou = false;
+				Informacoes.JogadorCartaGabineteMudou = false;
 			}
 		}
 		else if (gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaGabineteMudou)
+			if (Informacoes.OponenteCartaGabineteMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoRefrigeracao();
@@ -57,7 +57,7 @@ public class DisplayGabinete : MonoBehaviour{
 				GerarAtributoBaiasHD();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaGabineteMudou = false;
+				Informacoes.OponenteCartaGabineteMudou = false;
 			}
 		}
 	}

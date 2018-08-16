@@ -35,8 +35,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
-						if((((RodadaPlacaMaeJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaMaeJogador) < RodadasAteComparar)))) || 
-							((RodadaPlacaMaeOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaMaeOponente) < RodadasAteComparar)))))
+						if((((RodadaPlacaMaeJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaMaeJogador) < RodadasAteComparar)))) || 
+							((RodadaPlacaMaeOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaMaeOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -56,8 +56,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
 					{
-						if ((((RodadaProcessadorJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaProcessadorJogador) < RodadasAteComparar)))) || 
-							((RodadaProcessadorOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaProcessadorOponente) < RodadasAteComparar)))))
+						if ((((RodadaProcessadorJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaProcessadorJogador) < RodadasAteComparar)))) || 
+							((RodadaProcessadorOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaProcessadorOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -77,8 +77,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
 					{
-						if ((((RodadaMemoriaJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaMemoriaJogador) < RodadasAteComparar)))) ||
-							((RodadaMemoriaOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaMemoriaOponente) < RodadasAteComparar)))))
+						if ((((RodadaMemoriaJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaMemoriaJogador) < RodadasAteComparar)))) ||
+							((RodadaMemoriaOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaMemoriaOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -98,8 +98,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
 					{
-						if ((((RodadaPlacaDeVideoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteComparar)))) ||
-							((RodadaPlacaDeVideoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteComparar)))))
+						if ((((RodadaPlacaDeVideoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteComparar)))) ||
+							((RodadaPlacaDeVideoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -119,8 +119,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
 					{
-						if ((((RodadaDiscoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaDiscoJogador) < RodadasAteComparar)))) ||
-							((RodadaDiscoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaDiscoOponente) < RodadasAteComparar)))))
+						if ((((RodadaDiscoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaDiscoJogador) < RodadasAteComparar)))) ||
+							((RodadaDiscoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaDiscoOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -140,8 +140,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
 					{
-						if ((((RodadaFonteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaFonteJogador) < RodadasAteComparar)))) ||
-							((RodadaFonteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaFonteOponente) < RodadasAteComparar)))))
+						if ((((RodadaFonteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaFonteJogador) < RodadasAteComparar)))) ||
+							((RodadaFonteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaFonteOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -161,8 +161,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
 					{
-						if ((((RodadaGabineteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaGabineteJogador) < RodadasAteComparar)))) ||
-							((RodadaGabineteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaGabineteOponente) < RodadasAteComparar)))))
+						if ((((RodadaGabineteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaGabineteJogador) < RodadasAteComparar)))) ||
+							((RodadaGabineteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaGabineteOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
@@ -213,7 +213,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
 		if (Comparou)
 		{
-			Manager.Comparando = true;
+			StateMachine.Comparando = true;
 		}
 		else
 		{
@@ -246,13 +246,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaPlacaMaeJogador = Manager.Rodada;
+			RodadaPlacaMaeJogador = StateMachine.Rodada;
 		}
-		else if(Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if(StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaPlacaMaeOponente = Manager.Rodada;
+			RodadaPlacaMaeOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -266,12 +266,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoQuantidadeMemoriaSlider.value > CartaOponente.AtributoQuantidadeMemoriaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoQuantidadeMemoriaSlider.value < CartaOponente.AtributoQuantidadeMemoriaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -285,12 +285,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPortasSataSlider.value > CartaOponente.AtributoPortasSataSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPortasSataSlider.value < CartaOponente.AtributoPortasSataSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -304,12 +304,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoSlotsPCIESlider.value > CartaOponente.AtributoSlotsPCIESlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoSlotsPCIESlider.value < CartaOponente.AtributoSlotsPCIESlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -323,12 +323,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -356,13 +356,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaProcessadorJogador = Manager.Rodada;
+			RodadaProcessadorJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaProcessadorOponente = Manager.Rodada;
+			RodadaProcessadorOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -376,12 +376,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoDesempenhoSingleCoreSlider.value > CartaOponente.AtributoDesempenhoSingleCoreSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoDesempenhoSingleCoreSlider.value < CartaOponente.AtributoDesempenhoSingleCoreSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -395,12 +395,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoDesempenhoMultiCoreSlider.value > CartaOponente.AtributoDesempenhoMultiCoreSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoDesempenhoMultiCoreSlider.value < CartaOponente.AtributoDesempenhoMultiCoreSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -414,12 +414,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoConsumoSlider.value > CartaOponente.AtributoConsumoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoConsumoSlider.value < CartaOponente.AtributoConsumoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -433,12 +433,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -466,13 +466,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaMemoriaJogador = Manager.Rodada;
+			RodadaMemoriaJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaMemoriaOponente = Manager.Rodada;
+			RodadaMemoriaOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -486,12 +486,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoQuantidadeMemoriaSlider.value > CartaOponente.AtributoQuantidadeMemoriaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoQuantidadeMemoriaSlider.value < CartaOponente.AtributoQuantidadeMemoriaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -505,12 +505,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoDesempenhoSlider.value > CartaOponente.AtributoDesempenhoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoDesempenhoSlider.value < CartaOponente.AtributoDesempenhoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -524,12 +524,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoLatenciaSlider.value > CartaOponente.AtributoLatenciaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoLatenciaSlider.value < CartaOponente.AtributoLatenciaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -543,12 +543,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -576,13 +576,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaPlacaDeVideoJogador = Manager.Rodada;
+			RodadaPlacaDeVideoJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaPlacaDeVideoOponente = Manager.Rodada;
+			RodadaPlacaDeVideoOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -596,12 +596,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoDesempenhoSlider.value > CartaOponente.AtributoDesempenhoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoDesempenhoSlider.value < CartaOponente.AtributoDesempenhoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -615,12 +615,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoMemoriaSlider.value > CartaOponente.AtributoMemoriaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoMemoriaSlider.value < CartaOponente.AtributoMemoriaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -634,12 +634,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoConsumoSlider.value > CartaOponente.AtributoConsumoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoConsumoSlider.value < CartaOponente.AtributoConsumoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -653,12 +653,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -686,13 +686,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaDiscoJogador = Manager.Rodada;
+			RodadaDiscoJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaDiscoOponente = Manager.Rodada;
+			RodadaDiscoOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -706,12 +706,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoCapacidadeDeArmazenamentoSlider.value > CartaOponente.AtributoCapacidadeDeArmazenamentoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoCapacidadeDeArmazenamentoSlider.value < CartaOponente.AtributoCapacidadeDeArmazenamentoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -725,12 +725,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoVelocidadeSlider.value > CartaOponente.AtributoVelocidadeSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoVelocidadeSlider.value < CartaOponente.AtributoVelocidadeSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -744,12 +744,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoCustoPorGBSlider.value > CartaOponente.AtributoCustoPorGBSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoCustoPorGBSlider.value < CartaOponente.AtributoCustoPorGBSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -763,12 +763,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -796,13 +796,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaFonteJogador = Manager.Rodada;
+			RodadaFonteJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaFonteOponente = Manager.Rodada;
+			RodadaFonteOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -816,12 +816,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPotenciaSlider.value > CartaOponente.AtributoPotenciaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPotenciaSlider.value < CartaOponente.AtributoPotenciaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -835,12 +835,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoEficienciaSlider.value > CartaOponente.AtributoEficienciaSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoEficienciaSlider.value < CartaOponente.AtributoEficienciaSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -854,12 +854,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoCustoPorWSlider.value > CartaOponente.AtributoCustoPorWSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoCustoPorWSlider.value < CartaOponente.AtributoCustoPorWSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -873,12 +873,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -906,13 +906,13 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 			}
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaGabineteJogador = Manager.Rodada;
+			RodadaGabineteJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaGabineteOponente = Manager.Rodada;
+			RodadaGabineteOponente = StateMachine.Rodada;
 		}
 
 		Comparou = true;
@@ -926,12 +926,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoRefrigeracaoSlider.value > CartaOponente.AtributoRefrigeracaoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoRefrigeracaoSlider.value < CartaOponente.AtributoRefrigeracaoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -945,12 +945,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoSlotsPCISlider.value > CartaOponente.AtributoSlotsPCISlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoSlotsPCISlider.value < CartaOponente.AtributoSlotsPCISlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -964,12 +964,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoBaiasHDSlider.value > CartaOponente.AtributoBaiasHDSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoBaiasHDSlider.value < CartaOponente.AtributoBaiasHDSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{
@@ -983,12 +983,12 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 				if (CartaJogador.AtributoPrecoSlider.value > CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Jogador venceu a comparação!");
-					Manager.HardCashJogador++;
+					HardCash.HardCashJogador++;
 				}
 				else if (CartaJogador.AtributoPrecoSlider.value < CartaOponente.AtributoPrecoSlider.value)
 				{
 					Debug.Log("Oponente venceu a comparação!");
-					Manager.HardCashOponente++;
+					HardCash.HardCashOponente++;
 				}
 				else
 				{

@@ -35,7 +35,7 @@ public class DisplayDisco : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaDiscoMudou)
+			if (Informacoes.JogadorCartaDiscoMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoCapacidadeDeArmazenamento();
@@ -43,12 +43,12 @@ public class DisplayDisco : MonoBehaviour{
 				GerarAtributoCustoPorGB();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaDiscoMudou = false;
+				Informacoes.JogadorCartaDiscoMudou = false;
 			}
 		}
 		else if (gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaDiscoMudou)
+			if (Informacoes.OponenteCartaDiscoMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoCapacidadeDeArmazenamento();
@@ -56,7 +56,7 @@ public class DisplayDisco : MonoBehaviour{
 				GerarAtributoCustoPorGB();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaDiscoMudou = false;
+				Informacoes.OponenteCartaDiscoMudou = false;
 			}
 		}
 	}

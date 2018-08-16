@@ -37,7 +37,7 @@ public class DisplayMemoria : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaMemoriaMudou)
+			if (Informacoes.JogadorCartaMemoriaMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenho();
@@ -45,12 +45,12 @@ public class DisplayMemoria : MonoBehaviour{
 				GerarAtributoLatencia();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaMemoriaMudou = false;
+				Informacoes.JogadorCartaMemoriaMudou = false;
 			}
 		}
 		else if(gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaMemoriaMudou)
+			if (Informacoes.OponenteCartaMemoriaMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoDesempenho();
@@ -58,7 +58,7 @@ public class DisplayMemoria : MonoBehaviour{
 				GerarAtributoLatencia();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaMemoriaMudou = false;
+				Informacoes.OponenteCartaMemoriaMudou = false;
 			}
 		}
 	}

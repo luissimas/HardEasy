@@ -36,8 +36,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
-						if ((((RodadaPlacaMaeJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaMaeJogador) < RodadasAteTrocar)))) ||
-							((RodadaPlacaMaeOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaMaeOponente) < RodadasAteTrocar)))))
+						if ((((RodadaPlacaMaeJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaMaeJogador) < RodadasAteTrocar)))) ||
+							((RodadaPlacaMaeOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaMaeOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -55,8 +55,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
 					{
-						if ((((RodadaProcessadorJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaProcessadorJogador) < RodadasAteTrocar)))) ||
-							((RodadaProcessadorOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaProcessadorOponente) < RodadasAteTrocar)))))
+						if ((((RodadaProcessadorJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaProcessadorJogador) < RodadasAteTrocar)))) ||
+							((RodadaProcessadorOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaProcessadorOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -74,8 +74,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
 					{
-						if ((((RodadaMemoriaJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaMemoriaJogador) < RodadasAteTrocar)))) ||
-							((RodadaMemoriaOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaMemoriaOponente) < RodadasAteTrocar)))))
+						if ((((RodadaMemoriaJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaMemoriaJogador) < RodadasAteTrocar)))) ||
+							((RodadaMemoriaOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaMemoriaOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -93,8 +93,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
 					{
-						if ((((RodadaPlacaDeVideoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteTrocar)))) ||
-							((RodadaPlacaDeVideoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteTrocar)))))
+						if ((((RodadaPlacaDeVideoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteTrocar)))) ||
+							((RodadaPlacaDeVideoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -112,8 +112,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
 					{
-						if ((((RodadaDiscoJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaDiscoJogador) < RodadasAteTrocar)))) ||
-							((RodadaDiscoOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaDiscoOponente) < RodadasAteTrocar)))))
+						if ((((RodadaDiscoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaDiscoJogador) < RodadasAteTrocar)))) ||
+							((RodadaDiscoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaDiscoOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -131,8 +131,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
 					{
-						if ((((RodadaFonteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaFonteJogador) < RodadasAteTrocar)))) ||
-							((RodadaFonteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaFonteOponente) < RodadasAteTrocar)))))
+						if ((((RodadaFonteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaFonteJogador) < RodadasAteTrocar)))) ||
+							((RodadaFonteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaFonteOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -150,8 +150,8 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
 					{
-						if ((((RodadaGabineteJogador > 0) && (((Manager.EstadoAtual == Manager.Estados.VezDoJogador) && ((Manager.Rodada - RodadaGabineteJogador) < RodadasAteTrocar)))) ||
-							((RodadaGabineteOponente > 0) && ((Manager.EstadoAtual == Manager.Estados.VezDoOponente) && ((Manager.Rodada - RodadaGabineteOponente) < RodadasAteTrocar)))))
+						if ((((RodadaGabineteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaGabineteJogador) < RodadasAteTrocar)))) ||
+							((RodadaGabineteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaGabineteOponente) < RodadasAteTrocar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteTrocar + " rodadas até poder trocar a carta novamente");
 						}
@@ -196,7 +196,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Trocou)
 		{
-			Manager.Trocando = true;
+			StateMachine.Trocando = true;
 		}
 		else
 		{
@@ -216,7 +216,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -224,7 +224,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -244,39 +244,34 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaPlacaMaeJogador = Manager.Rodada;
+			RodadaPlacaMaeJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaPlacaMaeOponente = Manager.Rodada;
+			RodadaPlacaMaeOponente = StateMachine.Rodada;
 		}
 
 		PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
 
-		//Verifica se a placa-mãe selecionada aleatoriamente é diferente da placa-mãe ativa
-		if ((GetComponentInChildren<DisplayPlacaMae>().placaMae != placamaeAleatoria) && (OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae != placamaeAleatoria))
+		while ((placamaeAleatoria == GetComponentInChildren<DisplayPlacaMae>().placaMae) || (placamaeAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae))
 		{
-			GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
-
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaPlacaMaeMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaPlacaMaeMudou = true;
-				Manager.HardCashOponente--;
-			}
+			placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
 		}
-		else
+
+		GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarPlacaMae(Panel);
+			Informacoes.JogadorCartaPlacaMaeMudou = true;
+			HardCash.HardCashJogador--;
+		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaPlacaMaeMudou = true;
+			HardCash.HardCashOponente--;
 		}
 
 		Trocou = true;
@@ -287,7 +282,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -295,7 +290,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -316,41 +311,33 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaProcessadorJogador = Manager.Rodada;
+			RodadaProcessadorJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaProcessadorOponente = Manager.Rodada;
+			RodadaProcessadorOponente = StateMachine.Rodada;
 		}
 
 		Processador processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)]; //Gera um processado aleatório da lista
 
-		//Verifica se o processador selecionado aleatoriamente é diferente do processador ativo
-		if ((GetComponentInChildren<DisplayProcessador>().processador != processadorAleatorio) && (OutroPanel.GetComponentInChildren<DisplayProcessador>().processador != processadorAleatorio))
+		while ((processadorAleatorio == GetComponentInChildren<DisplayProcessador>().processador) || (processadorAleatorio == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador))
 		{
-			GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
-
-			//VerificarProcessadorIgual(PanelBaralho, OutroPanel);
-
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaProcessadorMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaProcessadorMudou = true;
-				Manager.HardCashOponente--;
-			}
+			processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
 		}
-		else
+		GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarProcessador(Panel);
+			Informacoes.JogadorCartaProcessadorMudou = true;
+			HardCash.HardCashJogador--;
+		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaProcessadorMudou = true;
+			HardCash.HardCashOponente--;
 		}
 
 		Trocou = true;
@@ -361,7 +348,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -369,7 +356,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -389,42 +376,39 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaMemoriaJogador = Manager.Rodada;
+			RodadaMemoriaJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaMemoriaOponente = Manager.Rodada;
+			RodadaMemoriaOponente = StateMachine.Rodada;
 		}
 
 		Memoria memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)]; //Gera uma memória aleatória da lista
 
-		//Verfica se a memória selecionada aleatoriamente é diferente da memória ativa
-		if ((GetComponentInChildren<DisplayMemoria>().memoria != memoriaAleatoria) && (OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria != memoriaAleatoria))
+		while ((memoriaAleatoria == GetComponentInChildren<DisplayMemoria>().memoria) || (memoriaAleatoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria))
 		{
-			GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
-
-			//VerificarMemoriaIgual(PanelBaralho, OutroPanel);
-
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaMemoriaMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaMemoriaMudou = true;
-				Manager.HardCashOponente--;
-			}
+			memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)];
 		}
-		else
+
+		GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarMemoria(Panel);
+			Informacoes.JogadorCartaMemoriaMudou = true;
+			HardCash.HardCashJogador--;
 		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaMemoriaMudou = true;
+			HardCash.HardCashOponente--;
+		}
+
+		//Chama a função recursivamente para gerar outro componente de forma aleatoria
+		Manager.PodeInteragir = true;
+		TrocarMemoria(Panel);
 
 		Trocou = true;
 	}
@@ -434,7 +418,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -442,7 +426,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -462,40 +446,39 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaPlacaDeVideoJogador = Manager.Rodada;
+			RodadaPlacaDeVideoJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaPlacaDeVideoOponente = Manager.Rodada;
+			RodadaPlacaDeVideoOponente = StateMachine.Rodada;
 		}
 
 		PlacaDeVideo placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)]; //Gera uma placa de vídeo aleatória da lista
 
-		//Verifica se a placa de vídeo selecionada aleatoriamente é diferente da placa de vídeo ativa
-		if ((GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo != placadevideoAleatoria) && (OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo != placadevideoAleatoria))
+		while ((placadevideoAleatoria == GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo) || (placadevideoAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo))
 		{
-			GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
+			placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)];
+		}
 
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaPlacaDeVideoMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaPlacaDeVideoMudou = true;
-				Manager.HardCashOponente--;
-			}
-		}
-		else
+		GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarPlacaDeVideo(Panel);
+			Informacoes.JogadorCartaPlacaDeVideoMudou = true;
+			HardCash.HardCashJogador--;
 		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaPlacaDeVideoMudou = true;
+			HardCash.HardCashOponente--;
+		}
+
+		//Chama a função recursivamente para gerar outro componente de forma aleatoria
+		Manager.PodeInteragir = true;
+		TrocarPlacaDeVideo(Panel);
 
 		Trocou = true;
 	}
@@ -505,7 +488,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -513,7 +496,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -533,40 +516,39 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaDiscoJogador = Manager.Rodada;
+			RodadaDiscoJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaDiscoOponente = Manager.Rodada;
+			RodadaDiscoOponente = StateMachine.Rodada;
 		}
 
 		Disco discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)]; //Gera um disco aleatório da lista
 
-		//Verifica se o disco selecionado aleatoriamente é diferente do disco ativo
-		if ((GetComponentInChildren<DisplayDisco>().disco != discoAleatorio) && (OutroPanel.GetComponentInChildren<DisplayDisco>().disco != discoAleatorio))
+		while ((discoAleatorio == GetComponentInChildren<DisplayDisco>().disco) || (discoAleatorio == OutroPanel.GetComponentInChildren<DisplayDisco>().disco))
 		{
-			GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
+			discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)];
+		}
 
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaDiscoMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaDiscoMudou = true;
-				Manager.HardCashOponente--;
-			}
-		}
-		else
+		GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarDisco(Panel);
+			Informacoes.JogadorCartaDiscoMudou = true;
+			HardCash.HardCashJogador--;
 		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaDiscoMudou = true;
+			HardCash.HardCashOponente--;
+		}
+
+		//Chama a função recursivamente para gerar outro componente de forma aleatoria
+		Manager.PodeInteragir = true;
+		TrocarDisco(Panel);
 
 		Trocou = true;
 	}
@@ -576,7 +558,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -584,7 +566,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -604,40 +586,39 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaFonteJogador = Manager.Rodada;
+			RodadaFonteJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaFonteOponente = Manager.Rodada;
+			RodadaFonteOponente = StateMachine.Rodada;
 		}
 
 		Fonte fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)]; //Gera uma fonte aleatória da lista
 
-		//Verifica se a fonte selecionada aleatoriamente é diferente da fonte ativa
-		if ((GetComponentInChildren<DisplayFonte>().fonte != fonteAleatoria) && (OutroPanel.GetComponentInChildren<DisplayFonte>().fonte != fonteAleatoria))
+		while ((fonteAleatoria == GetComponentInChildren<DisplayFonte>().fonte) || (fonteAleatoria == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte))
 		{
-			GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
+			fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
+		}
 
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaFonteMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaFonteMudou = true;
-				Manager.HardCashOponente--;
-			}
-		}
-		else
+		GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarFonte(Panel);
+			Informacoes.JogadorCartaFonteMudou = true;
+			HardCash.HardCashJogador--;
 		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaFonteMudou = true;
+			HardCash.HardCashOponente--;
+		}
+
+		//Chama a função recursivamente para gerar outro componente de forma aleatoria
+		Manager.PodeInteragir = true;
+		TrocarFonte(Panel);
 
 		Trocou = true;
 	}
@@ -647,7 +628,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			if (Manager.HardCashJogador == 0)
+			if (HardCash.HardCashJogador == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -655,7 +636,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		}
 		else if (Panel.gameObject.tag == "OpponentCard")
 		{
-			if (Manager.HardCashOponente == 0)
+			if (HardCash.HardCashOponente == 0)
 			{
 				Debug.Log("HardCash insuficiente!");
 				return;
@@ -675,40 +656,39 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = PanelJogador;
 		}
 
-		if (Manager.EstadoAtual == Manager.Estados.VezDoJogador)
+		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaGabineteJogador = Manager.Rodada;
+			RodadaGabineteJogador = StateMachine.Rodada;
 		}
-		else if (Manager.EstadoAtual == Manager.Estados.VezDoOponente)
+		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaGabineteOponente = Manager.Rodada;
+			RodadaGabineteOponente = StateMachine.Rodada;
 		}
 
 		Gabinete gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)]; //Gera um gabinete aleatório da lista
 
-		//Verifica se o gabinete selecionado aleatoriamente é diferente do gabinete ativo
-		if ((GetComponentInChildren<DisplayGabinete>().gabinete != gabineteAleatorio) && (OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete != gabineteAleatorio))
+		while ((gabineteAleatorio == GetComponentInChildren<DisplayGabinete>().gabinete) || (gabineteAleatorio == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete))
 		{
-			GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
+			gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
+		}
 
-			//Informa que houve alteração na carta
-			if (Panel == PanelJogador)
-			{
-				Manager.JogadorCartaGabineteMudou = true;
-				Manager.HardCashJogador--;
-			}
-			else if (Panel == PanelOponente)
-			{
-				Manager.OponenteCartaGabineteMudou = true;
-				Manager.HardCashOponente--;
-			}
-		}
-		else
+		GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
+
+		//Informa que houve alteração na carta
+		if (Panel == PanelJogador)
 		{
-			//Chama a função recursivamente para gerar outro componente de forma aleatoria
-			Manager.PodeInteragir = true;
-			TrocarGabinete(Panel);
+			Informacoes.JogadorCartaGabineteMudou = true;
+			HardCash.HardCashJogador--;
 		}
+		else if (Panel == PanelOponente)
+		{
+			Informacoes.OponenteCartaGabineteMudou = true;
+			HardCash.HardCashOponente--;
+		}
+
+		//Chama a função recursivamente para gerar outro componente de forma aleatoria
+		Manager.PodeInteragir = true;
+		TrocarGabinete(Panel);
 
 		Trocou = true;
 	}

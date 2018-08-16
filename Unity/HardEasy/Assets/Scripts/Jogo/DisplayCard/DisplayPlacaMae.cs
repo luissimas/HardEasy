@@ -39,7 +39,7 @@ public class DisplayPlacaMae : MonoBehaviour{
 		//Verifica se houve alguma alteração na carta se baseando em sua tag
 		if (gameObject.tag == "PlayerCard")
 		{
-			if (Manager.JogadorCartaPlacaMaeMudou)
+			if (Informacoes.JogadorCartaPlacaMaeMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoQuantidadeMemoria();
@@ -47,12 +47,12 @@ public class DisplayPlacaMae : MonoBehaviour{
 				GerarAtributoSlotsPCIE();
 				GerarAtributoPreco();
 
-				Manager.JogadorCartaPlacaMaeMudou = false;
+				Informacoes.JogadorCartaPlacaMaeMudou = false;
 			}
 		}
 		else if(gameObject.tag == "OpponentCard")
 		{
-			if (Manager.OponenteCartaPlacaMaeMudou)
+			if (Informacoes.OponenteCartaPlacaMaeMudou)
 			{
 				ExibirInformacoes();
 				GerarAtributoQuantidadeMemoria();
@@ -60,7 +60,7 @@ public class DisplayPlacaMae : MonoBehaviour{
 				GerarAtributoSlotsPCIE();
 				GerarAtributoPreco();
 
-				Manager.OponenteCartaPlacaMaeMudou = false;
+				Informacoes.OponenteCartaPlacaMaeMudou = false;
 			}
 		}
 	}
