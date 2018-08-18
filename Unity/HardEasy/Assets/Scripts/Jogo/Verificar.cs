@@ -16,15 +16,18 @@ public static class Verificar
 		VerificarFonteIgual(Panel, OutroPanel);
 		VerificarGabineteIgual(Panel, OutroPanel);
 
-		if(Compatibilidade.ProcessadorConectaPlacaMae(Panel))
+		while (Compatibilidade.ProcessadorConectaPlacaMae(Panel) || Compatibilidade.ProcessadorConectaPlacaMae(OutroPanel))
 		{
-			Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
-			VerificarPlacaMaeIgual(Panel, OutroPanel);
-		}
-		else if (Compatibilidade.ProcessadorConectaPlacaMae(OutroPanel))
-		{
-			OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
-			VerificarPlacaMaeIgual(OutroPanel, Panel);
+			if (Compatibilidade.ProcessadorConectaPlacaMae(Panel))
+			{
+				Panel.GetComponentInChildren<DisplayProcessador>().processador = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
+				VerificarProcessadorIgual(Panel, OutroPanel);
+			}
+			else
+			{
+				OutroPanel.GetComponentInChildren<DisplayProcessador>().processador = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
+				VerificarProcessadorIgual(OutroPanel, Panel);
+			}
 		}
 	}
 
@@ -68,7 +71,7 @@ public static class Verificar
 	{
 		int Count = 0;
 
-		while (Panel.GetComponentInChildren<DisplayMemoria>().memoria = OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria)
+		while (Panel.GetComponentInChildren<DisplayMemoria>().memoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria)
 		{
 			if (Count <= 20)
 			{
