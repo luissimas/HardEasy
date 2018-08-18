@@ -7,7 +7,6 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 {
 	#region Drag and Drop
 
-	public GameObject PanelJogador, PanelOponente;
 	[HideInInspector] public bool Comparou = false;
 	public int RodadasAteComparar;
 
@@ -32,6 +31,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					Manager.PodeInteragir = false;
 					Comparou = false;
 					eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
+					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false;
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
@@ -44,11 +44,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararPlacaMae", 2);
@@ -65,11 +65,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararProcessador", 2);
@@ -86,11 +86,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararMemoria", 2);
@@ -107,11 +107,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararPlacaDeVideo", 2);
@@ -128,11 +128,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararDisco", 2);
@@ -149,11 +149,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararFonte", 2);
@@ -170,11 +170,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						{
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
-								PanelOponente.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelOponente.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
 							}
 							else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
 							{
-								PanelJogador.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
+								Informacoes.PanelJogador.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
 							}
 
 							Invoke("CompararGabinete", 2);
@@ -202,11 +202,11 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
 				if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "PlayerCard")
 				{
-					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(PanelJogador.transform);
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(Informacoes.PanelJogador.transform);
 				}
 				else if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "OpponentCard")
 				{
-					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(PanelOponente.transform);
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(Informacoes.PanelOponente.transform);
 				}
 			}
 		}

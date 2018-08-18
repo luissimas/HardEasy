@@ -7,7 +7,6 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 {
 	#region Drag and Drop
 
-	public GameObject PanelJogador, PanelOponente;
 	[HideInInspector] public bool Trocou = false;
 	public int RodadasAteTrocar;
 
@@ -45,11 +44,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
-								TrocarPlacaMae(PanelJogador);
+								TrocarPlacaMae(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
 							{
-								TrocarPlacaMae(PanelOponente);
+								TrocarPlacaMae(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -64,11 +63,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
-								TrocarProcessador(PanelJogador);
+								TrocarProcessador(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
 							{
-								TrocarProcessador(PanelOponente);
+								TrocarProcessador(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -83,11 +82,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
-								TrocarMemoria(PanelJogador);
+								TrocarMemoria(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
 							{
-								TrocarMemoria(PanelOponente);
+								TrocarMemoria(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -102,11 +101,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
-								TrocarPlacaDeVideo(PanelJogador);
+								TrocarPlacaDeVideo(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
 							{
-								TrocarPlacaDeVideo(PanelOponente);
+								TrocarPlacaDeVideo(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -121,11 +120,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
-								TrocarDisco(PanelJogador);
+								TrocarDisco(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
 							{
-								TrocarDisco(PanelOponente);
+								TrocarDisco(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -140,11 +139,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
-								TrocarFonte(PanelJogador);
+								TrocarFonte(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
 							{
-								TrocarFonte(PanelOponente);
+								TrocarFonte(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -159,11 +158,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						{
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
-								TrocarGabinete(PanelJogador);
+								TrocarGabinete(Informacoes.PanelJogador);
 							}
 							else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
 							{
-								TrocarGabinete(PanelOponente);
+								TrocarGabinete(Informacoes.PanelOponente);
 							}
 						}
 					}
@@ -185,11 +184,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 				if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "PlayerCard")
 				{
-					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(PanelJogador.transform);
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(Informacoes.PanelJogador.transform);
 				}
 				else if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "OpponentCard")
 				{
-					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(PanelOponente.transform);
+					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(Informacoes.PanelOponente.transform);
 				}
 			}
 		}
@@ -237,11 +236,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -263,12 +262,12 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaPlacaMaeMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaPlacaMaeMudou = true;
 			HardCash.HardCashOponente--;
@@ -304,11 +303,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -329,12 +328,12 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaProcessadorMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaProcessadorMudou = true;
 			HardCash.HardCashOponente--;
@@ -369,11 +368,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -395,20 +394,16 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaMemoriaMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaMemoriaMudou = true;
 			HardCash.HardCashOponente--;
 		}
-
-		//Chama a função recursivamente para gerar outro componente de forma aleatoria
-		Manager.PodeInteragir = true;
-		TrocarMemoria(Panel);
 
 		Trocou = true;
 	}
@@ -439,11 +434,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -465,20 +460,16 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaPlacaDeVideoMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaPlacaDeVideoMudou = true;
 			HardCash.HardCashOponente--;
 		}
-
-		//Chama a função recursivamente para gerar outro componente de forma aleatoria
-		Manager.PodeInteragir = true;
-		TrocarPlacaDeVideo(Panel);
 
 		Trocou = true;
 	}
@@ -509,11 +500,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -535,20 +526,16 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaDiscoMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaDiscoMudou = true;
 			HardCash.HardCashOponente--;
 		}
-
-		//Chama a função recursivamente para gerar outro componente de forma aleatoria
-		Manager.PodeInteragir = true;
-		TrocarDisco(Panel);
 
 		Trocou = true;
 	}
@@ -579,11 +566,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -605,20 +592,16 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaFonteMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaFonteMudou = true;
 			HardCash.HardCashOponente--;
 		}
-
-		//Chama a função recursivamente para gerar outro componente de forma aleatoria
-		Manager.PodeInteragir = true;
-		TrocarFonte(Panel);
 
 		Trocou = true;
 	}
@@ -649,11 +632,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
-			OutroPanel = PanelOponente;
+			OutroPanel = Informacoes.PanelOponente;
 		}
 		else
 		{
-			OutroPanel = PanelJogador;
+			OutroPanel = Informacoes.PanelJogador;
 		}
 
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
@@ -675,20 +658,16 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
 
 		//Informa que houve alteração na carta
-		if (Panel == PanelJogador)
+		if (Panel == Informacoes.PanelJogador)
 		{
 			Informacoes.JogadorCartaGabineteMudou = true;
 			HardCash.HardCashJogador--;
 		}
-		else if (Panel == PanelOponente)
+		else if (Panel == Informacoes.PanelOponente)
 		{
 			Informacoes.OponenteCartaGabineteMudou = true;
 			HardCash.HardCashOponente--;
 		}
-
-		//Chama a função recursivamente para gerar outro componente de forma aleatoria
-		Manager.PodeInteragir = true;
-		TrocarGabinete(Panel);
 
 		Trocou = true;
 	}
