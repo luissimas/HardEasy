@@ -5,6 +5,8 @@ using UnityEngine;
 public class Informacoes : MonoBehaviour
 {
 
+	public GameObject CanvasPrincipalInspector;
+	public static GameObject CanvasPrincipal;
 	public GameObject PanelJogadorInspector, PanelOponenteInspector;//Variáveis que recebem o canvas do jogador e do oponente
 	public static GameObject PanelJogador, PanelOponente;
 
@@ -14,12 +16,13 @@ public class Informacoes : MonoBehaviour
 
 	private void Start()
 	{
-		setPanel();
+		SetPanel();
 	}
 
-	public void setPanel()
+	public void SetPanel()
 	{
 		PanelJogador = PanelJogadorInspector;
 		PanelOponente = PanelOponenteInspector;
+		CanvasPrincipal = CanvasPrincipalInspector;
 	}
 }

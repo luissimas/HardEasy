@@ -31,7 +31,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	//Identifica se o mouse entrou em cima do objeto
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if (((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir)))
+		if ((((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir))) && Manager.PodeInteragir)
 		{
 			//Verifica a tag do objeto
 			if (gameObject.tag == "PlayerCard")

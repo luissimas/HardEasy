@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -20,5 +20,5 @@ MonoBehaviour:
   PortasSata: 6
   SuporteSLI: 0
   SuporteCrossfire: 0
-  Formato: m-ATX
+  Formato: Micro-ATX
   Preco: 599
