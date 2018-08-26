@@ -24,24 +24,27 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 	{
 		if (transform.childCount == 0) //Impede que sejam arrastadas mais de uma carta para a dropzone ao mesmo tempo
 		{
-			if (((eventData.pointerDrag.gameObject.tag == "PlayerCard") && (Manager.JogadorPodeInteragir)) || ((eventData.pointerDrag.gameObject.tag == "OpponentCard") && (Manager.OponentePodeInteragir)))
+			if (((eventData.pointerDrag.gameObject.tag == "PlayerCard") && (Manager.JogadorPodeInteragir)) || ((eventData.pointerDrag.gameObject.tag == "OpponentCard") && (Manager.OponentePodeInteragir))) //Verifica se era a vez do jogador e se ele realmente poderia interagir
 			{
-				if (Manager.PodeInteragir)
+				if (Manager.PodeInteragir) //Verifica se o jogo está em um estado em que é possível interagir
 				{
-					Manager.PodeInteragir = false;
+					Manager.PodeInteragir = false; //Impede que haja qualquer outra interação com o jogo enquanto a carta estiver sendo trocada
 					Comparou = false;
-					eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
-					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false;
+					eventData.pointerDrag.gameObject.transform.SetParent(this.transform); //Coloca a carta arrastada abaixo do painel na hierarquia
+					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false; //Bloqueia os raycasts para impedir a interação com a carta
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
-						if((((RodadaPlacaMaeJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaMaeJogador) < RodadasAteComparar)))) || 
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
+						if ((((RodadaPlacaMaeJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaMaeJogador) < RodadasAteComparar)))) || 
 							((RodadaPlacaMaeOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaMaeOponente) < RodadasAteComparar)))))
 						{
 							Debug.Log("O jogador deve esperar pelo menos " + RodadasAteComparar + " rodadas até poder comparar a carta novamente");
 						}
 						else
 						{
+							
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
@@ -56,6 +59,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaProcessadorJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaProcessadorJogador) < RodadasAteComparar)))) || 
 							((RodadaProcessadorOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaProcessadorOponente) < RodadasAteComparar)))))
 						{
@@ -63,6 +67,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
@@ -77,6 +82,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaMemoriaJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaMemoriaJogador) < RodadasAteComparar)))) ||
 							((RodadaMemoriaOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaMemoriaOponente) < RodadasAteComparar)))))
 						{
@@ -84,6 +90,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
@@ -98,6 +105,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaPlacaDeVideoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteComparar)))) ||
 							((RodadaPlacaDeVideoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteComparar)))))
 						{
@@ -105,6 +113,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
@@ -119,6 +128,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaDiscoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaDiscoJogador) < RodadasAteComparar)))) ||
 							((RodadaDiscoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaDiscoOponente) < RodadasAteComparar)))))
 						{
@@ -126,6 +136,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
@@ -140,6 +151,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaFonteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaFonteJogador) < RodadasAteComparar)))) ||
 							((RodadaFonteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaFonteOponente) < RodadasAteComparar)))))
 						{
@@ -147,6 +159,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
@@ -161,6 +174,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaGabineteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaGabineteJogador) < RodadasAteComparar)))) ||
 							((RodadaGabineteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaGabineteOponente) < RodadasAteComparar)))))
 						{
@@ -168,6 +182,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						}
 						else
 						{
+							//Pega a carta do jogador adversário e a coloca na mesa para ser comparada
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
 								Informacoes.PanelOponente.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
@@ -192,6 +207,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		}
 	}
 
+	//Retorna as cartas para o baralho de cada jogador
 	public void RetornarCartas()
 	{
 		while (GetComponentInChildren<CanvasGroup>() != null)

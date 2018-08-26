@@ -7,7 +7,7 @@ using TMPro;
 
 public class Manager : MonoBehaviour
 {
-	
+	//Variáveis para gerenciar a interação dos jogadores
 	public static bool JogadorPodeInteragir = false;
 	public static bool OponentePodeInteragir = false;
 	public static bool PodeInteragir = true;

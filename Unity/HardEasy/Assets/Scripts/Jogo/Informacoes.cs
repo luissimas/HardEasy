@@ -5,9 +5,10 @@ using UnityEngine;
 public class Informacoes : MonoBehaviour
 {
 
+	//Variáveis que recebem o canvas do jogador e do oponente
 	public GameObject CanvasPrincipalInspector;
 	public static GameObject CanvasPrincipal;
-	public GameObject PanelJogadorInspector, PanelOponenteInspector;//Variáveis que recebem o canvas do jogador e do oponente
+	public GameObject PanelJogadorInspector, PanelOponenteInspector;
 	public static GameObject PanelJogador, PanelOponente;
 
 	//Variáveis para identificar se houve mudança nas cartas
@@ -19,6 +20,7 @@ public class Informacoes : MonoBehaviour
 		SetPanel();
 	}
 
+	//Coloca as informações coletadas no isnpector nas variáveis static
 	public void SetPanel()
 	{
 		PanelJogador = PanelJogadorInspector;

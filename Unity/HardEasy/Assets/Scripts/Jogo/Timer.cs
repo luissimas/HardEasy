@@ -22,17 +22,18 @@ public class Timer : MonoBehaviour
 	//Gerencia o timer
 	public void TimerManager()
 	{
+		//Verifica se a rodada mudou e se o jogo não acabou
 		if ((StateMachine.EstadoMudou) && (StateMachine.EstadoAtual != StateMachine.Estados.Fim))
 		{
-			CancelInvoke("SetTimer");
-			TempoDaRodada = 31;
+			CancelInvoke("SetTimer"); //Interrompe a função do timer antigo
+			TempoDaRodada = 31; //Reseta o timer
 			StateMachine.EstadoMudou = false;
-			InvokeRepeating("SetTimer", (float)0.0, (float)1.0);
+			InvokeRepeating("SetTimer", (float)0.0, (float)1.0); //Inicia o timer novamente
 		}
 		else if ((StateMachine.EstadoMudou) && (StateMachine.EstadoAtual == StateMachine.Estados.Fim))
 		{
-			CancelInvoke("SetTimer");
-			TimerText.enabled = false;
+			CancelInvoke("SetTimer"); //Interrompe o timer
+			TimerText.enabled = false; //Esconde o timer na tela
 		}
 	}
 
@@ -48,6 +49,10 @@ public class Timer : MonoBehaviour
 		{
 			TempoDaRodada--;
 
+			/*Verifica se o tempo é menor que 10, dessa forma é 
+			possível formatar melhor a string com o tempo e 
+			também mudar a cor para avisar o jogador que o tempo está se esgotando
+			*/
 			if (TempoDaRodada < 10)
 			{
 				TimerText.text = "0" + TempoDaRodada.ToString();

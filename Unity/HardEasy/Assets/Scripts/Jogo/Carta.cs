@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
-	// Use this for initialization
 	void Start()
 	{
 		PosicaoOriginal = gameObject.transform.position; //Armazena a posição original da carta
@@ -37,12 +36,12 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			if (gameObject.tag == "PlayerCard")
 			{
 				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y + 20));
+				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y + 20)); //Modifica a posição da carta para que ela não saia da tela ao aumentar a escala
 			}
 			else if (gameObject.tag == "OpponentCard")
 			{
 				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
-				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y - 20));
+				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y - 20)); //Modifica a posição da carta para que ela não saia da tela ao aumentar a escala
 			}
 
 			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal + new Vector3((float)ScaleOffset, (float)ScaleOffset); //Aumenta a escala do objeto

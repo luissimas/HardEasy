@@ -24,17 +24,18 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	{
 		if (transform.childCount == 0) //Impede que sejam arrastadas mais de uma carta para a dropzone ao mesmo tempo
 		{
-			if (((eventData.pointerDrag.gameObject.tag == "PlayerCard") && (Manager.JogadorPodeInteragir)) || ((eventData.pointerDrag.gameObject.tag == "OpponentCard") && (Manager.OponentePodeInteragir)))
+			if (((eventData.pointerDrag.gameObject.tag == "PlayerCard") && (Manager.JogadorPodeInteragir)) || ((eventData.pointerDrag.gameObject.tag == "OpponentCard") && (Manager.OponentePodeInteragir))) //Verifica se era a vez do jogador e se ele realmente poderia interagir
 			{
-				if (Manager.PodeInteragir)
+				if (Manager.PodeInteragir) //Verifica se o jogo está em um estado em que é possível interagir
 				{
-					Manager.PodeInteragir = false;
+					Manager.PodeInteragir = false; //Impede que haja qualquer outra interação com o jogo enquanto a carta estiver sendo trocada
 					Trocou = false;
-					eventData.pointerDrag.gameObject.transform.SetParent(this.transform);
-					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false;
+					eventData.pointerDrag.gameObject.transform.SetParent(this.transform); //Coloca a carta arrastada abaixo do painel na hierarquia
+					GetComponentInChildren<CanvasGroup>().blocksRaycasts = false; //Bloqueia os raycasts para impedir a interação com a carta
 
 					if (GetComponentInChildren<DisplayPlacaMae>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaPlacaMaeJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaMaeJogador) < RodadasAteTrocar)))) ||
 							((RodadaPlacaMaeOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaMaeOponente) < RodadasAteTrocar)))))
 						{
@@ -42,6 +43,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
 								TrocarPlacaMae(Informacoes.PanelJogador);
@@ -54,6 +56,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaProcessadorJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaProcessadorJogador) < RodadasAteTrocar)))) ||
 							((RodadaProcessadorOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaProcessadorOponente) < RodadasAteTrocar)))))
 						{
@@ -61,6 +64,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
 								TrocarProcessador(Informacoes.PanelJogador);
@@ -73,6 +77,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaMemoriaJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaMemoriaJogador) < RodadasAteTrocar)))) ||
 							((RodadaMemoriaOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaMemoriaOponente) < RodadasAteTrocar)))))
 						{
@@ -80,6 +85,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
 								TrocarMemoria(Informacoes.PanelJogador);
@@ -92,6 +98,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaPlacaDeVideoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaPlacaDeVideoJogador) < RodadasAteTrocar)))) ||
 							((RodadaPlacaDeVideoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaPlacaDeVideoOponente) < RodadasAteTrocar)))))
 						{
@@ -99,6 +106,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
 								TrocarPlacaDeVideo(Informacoes.PanelJogador);
@@ -111,6 +119,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaDiscoJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaDiscoJogador) < RodadasAteTrocar)))) ||
 							((RodadaDiscoOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaDiscoOponente) < RodadasAteTrocar)))))
 						{
@@ -118,6 +127,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
 								TrocarDisco(Informacoes.PanelJogador);
@@ -130,6 +140,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaFonteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaFonteJogador) < RodadasAteTrocar)))) ||
 							((RodadaFonteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaFonteOponente) < RodadasAteTrocar)))))
 						{
@@ -137,6 +148,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
 								TrocarFonte(Informacoes.PanelJogador);
@@ -149,6 +161,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
 					{
+						//Verifica a útilma rodada em que a carta foi trocada e a compara com o número mínimo de rodadas que o jogador deve esperar até trocar a carta novamente
 						if ((((RodadaGabineteJogador > 0) && (((StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador) && ((StateMachine.Rodada - RodadaGabineteJogador) < RodadasAteTrocar)))) ||
 							((RodadaGabineteOponente > 0) && ((StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente) && ((StateMachine.Rodada - RodadaGabineteOponente) < RodadasAteTrocar)))))
 						{
@@ -156,6 +169,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 						}
 						else
 						{
+							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
 								TrocarGabinete(Informacoes.PanelJogador);
@@ -182,6 +196,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			{
 				GetComponentsInChildren<CanvasGroup>()[i].gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
+				//Retorna as cartas para o panel de origem baseado na tag do objeto
 				if (GetComponentsInChildren<CanvasGroup>()[i].gameObject.tag == "PlayerCard")
 				{
 					GetComponentsInChildren<CanvasGroup>()[i].gameObject.transform.SetParent(Informacoes.PanelJogador.transform);
@@ -213,6 +228,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	//Troca a carta do tipo placa-mãe por outra carta aleatória do mesmo tipo
 	public void TrocarPlacaMae(GameObject Panel)
 	{
+		//Verifica se o jogador que jogou a carta tem HardCash suficiente para trocar
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
 			if (HardCash.HardCashJogador == 0)
@@ -234,6 +250,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		GameObject OutroPanel;
 
+		//Encontra o panel do jogador adversário se baseando no panel do jogador que jogou a carta
 		if (Panel.gameObject.tag == "PlayerCard")
 		{
 			OutroPanel = Informacoes.PanelOponente;
@@ -243,6 +260,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = Informacoes.PanelJogador;
 		}
 
+		//Armazena a rodada que o jogador jogou a carta
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
 			RodadaPlacaMaeJogador = StateMachine.Rodada;
@@ -254,6 +272,7 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 
 		PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
 
+		//Verifica se a carta é igual a carta que o jogador já tinha ou a carta do jogador adversário
 		while ((placamaeAleatoria == GetComponentInChildren<DisplayPlacaMae>().placaMae) || (placamaeAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae))
 		{
 			placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];

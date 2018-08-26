@@ -16,6 +16,7 @@ public static class Verificar
 		VerificarFonteIgual(Panel, OutroPanel);
 		VerificarGabineteIgual(Panel, OutroPanel);
 
+		//Impede que o processador e a placa-mãe sejam compatíveis no início do jogo, evitando assim que o jogador tenha todas as cartas compatíveis logo no início do jogo
 		while (Compatibilidade.ProcessadorConectaPlacaMae(Panel) || Compatibilidade.ProcessadorConectaPlacaMae(OutroPanel))
 		{
 			if (Compatibilidade.ProcessadorConectaPlacaMae(Panel))
@@ -33,7 +34,7 @@ public static class Verificar
 
 	public static void VerificarPlacaMaeIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while(Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae)
 		{
@@ -51,7 +52,7 @@ public static class Verificar
 
 	public static void VerificarProcessadorIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayProcessador>().processador == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador)
 		{
@@ -69,7 +70,7 @@ public static class Verificar
 
 	public static void VerificarMemoriaIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayMemoria>().memoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria)
 		{
@@ -87,7 +88,7 @@ public static class Verificar
 
 	public static void VerificarPlacaDeVideoIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo)
 		{
@@ -105,7 +106,7 @@ public static class Verificar
 
 	public static void VerificarDiscoIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayDisco>().disco == OutroPanel.GetComponentInChildren<DisplayDisco>().disco)
 		{
@@ -123,7 +124,7 @@ public static class Verificar
 
 	public static void VerificarFonteIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayFonte>().fonte == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte)
 		{
@@ -141,7 +142,7 @@ public static class Verificar
 
 	public static void VerificarGabineteIgual(GameObject Panel, GameObject OutroPanel)
 	{
-		int Count = 0;
+		int Count = 0; //Contador para impedir um eventual loop infinito
 
 		while (Panel.GetComponentInChildren<DisplayGabinete>().gabinete == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete)
 		{
