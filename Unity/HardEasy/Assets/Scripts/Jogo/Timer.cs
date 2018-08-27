@@ -18,10 +18,26 @@ public class Timer : MonoBehaviour
 
 	public static int TempoDaRodada = 31; //Variável para controlar o tempo da rodada atual
 	public TMP_Text TimerText;
+	public bool TimerPausou = false;
 
 	//Gerencia o timer
 	public void TimerManager()
 	{
+		if (((Informacoes.PanelComparar.transform.childCount == 2) || (Informacoes.PanelTrocar.transform.childCount == 1)) && TimerPausou == false)
+		{
+			CancelInvoke("SetTimer"); //Interrompe a função do timer antigo
+			TimerPausou = true;
+			return;
+		}
+		else
+		{
+			if (TimerPausou && ((Informacoes.PanelComparar.transform.childCount == 0) && (Informacoes.PanelTrocar.transform.childCount == 0)))
+			{
+				InvokeRepeating("SetTimer", (float)0.0, (float)1.0); //Inicia o timer novamente
+				TimerPausou = false;
+			}
+		}
+
 		//Verifica se a rodada mudou e se o jogo não acabou
 		if ((StateMachine.EstadoMudou) && (StateMachine.EstadoAtual != StateMachine.Estados.Fim))
 		{

@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 114885146337991556}
   - component: {fileID: 225820393896556750}
   - component: {fileID: 114929029625534710}
+  - component: {fileID: 114195609580299758}
   m_Layer: 5
   m_Name: Carta_Gabinete
   m_TagString: PlayerCard
@@ -581,6 +582,52 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114195609580299758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452405899617168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2d532f27d108a45861fd9024be545f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardBack: {fileID: 0}
+  CurvaDaEscala:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.0001154
+      outSlope: -2.0001154
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4999709
+      value: 0.0000005364418
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.9998826
+      outSlope: 1.9998826
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Duracao: 0.5
 --- !u!114 &114215666589343294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1839,7 +1886,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
+  ScaleOffset: 0
   CardBack: {fileID: 1175923094413064}
+  Flipper: {fileID: 0}
 --- !u!114 &114946129761561288
 MonoBehaviour:
   m_ObjectHideFlags: 1

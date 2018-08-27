@@ -10,12 +10,14 @@ public class Informacoes : MonoBehaviour
 	public static GameObject CanvasPrincipal;
 	public GameObject PanelJogadorInspector, PanelOponenteInspector;
 	public static GameObject PanelJogador, PanelOponente;
+	public GameObject PanelCompararInspector, PanelTrocarInspector;
+	public static GameObject PanelComparar, PanelTrocar;
 
 	//Variáveis para identificar se houve mudança nas cartas
 	public static bool JogadorCartaPlacaMaeMudou = false, JogadorCartaProcessadorMudou = false, JogadorCartaMemoriaMudou = false, JogadorCartaPlacaDeVideoMudou = false, JogadorCartaDiscoMudou = false, JogadorCartaFonteMudou = false, JogadorCartaGabineteMudou = false;
 	public static bool OponenteCartaPlacaMaeMudou = false, OponenteCartaProcessadorMudou = false, OponenteCartaMemoriaMudou = false, OponenteCartaPlacaDeVideoMudou = false, OponenteCartaDiscoMudou = false, OponenteCartaFonteMudou = false, OponenteCartaGabineteMudou = false;
 
-	private void Start()
+	private void Awake()
 	{
 		SetPanel();
 	}
@@ -26,5 +28,7 @@ public class Informacoes : MonoBehaviour
 		PanelJogador = PanelJogadorInspector;
 		PanelOponente = PanelOponenteInspector;
 		CanvasPrincipal = CanvasPrincipalInspector;
-	}
+		PanelComparar = PanelCompararInspector;
+		PanelTrocar = PanelTrocarInspector;
+	} 
 }

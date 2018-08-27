@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 114419764419998316}
   - component: {fileID: 225285436671199260}
   - component: {fileID: 114692904488752872}
+  - component: {fileID: 114271557544147216}
   m_Layer: 5
   m_Name: Carta_PlacaDeVideo
   m_TagString: PlayerCard
@@ -739,6 +740,52 @@ MonoBehaviour:
   m_canvasRenderer: {fileID: 222359948670310740}
   m_TextComponent: {fileID: 114606360868078958}
   m_materialReferenceIndex: 1
+--- !u!114 &114271557544147216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221470632779558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2d532f27d108a45861fd9024be545f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardBack: {fileID: 0}
+  CurvaDaEscala:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.0001154
+      outSlope: -2.0001154
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4999709
+      value: 0.0000005364418
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.9998826
+      outSlope: 1.9998826
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Duracao: 0.5
 --- !u!114 &114311283396023690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1815,7 +1862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
+  ScaleOffset: 0
   CardBack: {fileID: 1060834139191570}
+  Flipper: {fileID: 0}
 --- !u!114 &114698735364665746
 MonoBehaviour:
   m_ObjectHideFlags: 1

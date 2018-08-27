@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 114494882656668702}
   - component: {fileID: 225696378553717650}
   - component: {fileID: 114218590220056798}
+  - component: {fileID: 114451218279628592}
   m_Layer: 5
   m_Name: Carta_PlacaMae
   m_TagString: PlayerCard
@@ -975,7 +976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
+  ScaleOffset: 0
   CardBack: {fileID: 1556449556307314}
+  Flipper: {fileID: 0}
 --- !u!114 &114225383400637628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1200,6 +1203,52 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114451218279628592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865714014703664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2d532f27d108a45861fd9024be545f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardBack: {fileID: 0}
+  CurvaDaEscala:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.0001154
+      outSlope: -2.0001154
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4999709
+      value: 0.0000005364418
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.9998826
+      outSlope: 1.9998826
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Duracao: 0.5
 --- !u!114 &114457060092829092
 MonoBehaviour:
   m_ObjectHideFlags: 1
