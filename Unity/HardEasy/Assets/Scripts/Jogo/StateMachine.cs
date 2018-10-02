@@ -96,6 +96,7 @@ public class StateMachine : MonoBehaviour
 		}
 
 		EstadoMudou = true;
+
 		Manager.PodeInteragir = true;
 	}
 

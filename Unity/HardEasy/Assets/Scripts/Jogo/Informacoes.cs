@@ -8,8 +8,10 @@ public class Informacoes : MonoBehaviour
 	//Variáveis que recebem o canvas do jogador e do oponente
 	public GameObject CanvasPrincipalInspector;
 	public static GameObject CanvasPrincipal;
+
 	public GameObject PanelJogadorInspector, PanelOponenteInspector;
 	public static GameObject PanelJogador, PanelOponente;
+
 	public GameObject PanelCompararInspector, PanelTrocarInspector;
 	public static GameObject PanelComparar, PanelTrocar;
 
@@ -27,7 +29,9 @@ public class Informacoes : MonoBehaviour
 	{
 		PanelJogador = PanelJogadorInspector;
 		PanelOponente = PanelOponenteInspector;
+
 		CanvasPrincipal = CanvasPrincipalInspector;
+
 		PanelComparar = PanelCompararInspector;
 		PanelTrocar = PanelTrocarInspector;
 	} 

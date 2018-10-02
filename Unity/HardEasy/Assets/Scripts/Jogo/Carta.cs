@@ -6,6 +6,13 @@ using UnityEngine.EventSystems;
 public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
+	VirarCartas Flipper;
+
+	private void Awake()
+	{
+		Flipper = GetComponent<VirarCartas>();
+	}
+
 	void Start()
 	{
 		PosicaoOriginal = gameObject.transform.position; //Armazena a posição original da carta
@@ -14,7 +21,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
 	void Update()
 	{
-		Esconder();
+		EstadoDaCarta();
 		Posicionar();
 	}
 
@@ -44,7 +51,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y - 20)); //Modifica a posição da carta para que ela não saia da tela ao aumentar a escala
 			}
 
-			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal + new Vector3((float)ScaleOffset, (float)ScaleOffset); //Aumenta a escala do objeto
+			gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3(EscalaOriginal.x + ScaleOffset, EscalaOriginal.y + ScaleOffset); //Aumenta a escala do objeto
 		}
 	}
 
@@ -104,17 +111,15 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 		}
 		else
 		{
-			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal + new Vector3((float)ScaleOffset, (float)ScaleOffset); //Aumenta a escala do objeto
+			gameObject.GetComponent<RectTransform>().transform.localScale = new Vector3(EscalaOriginal.x + ScaleOffset, EscalaOriginal.y + ScaleOffset); //Aumenta a escala do objeto
 		}
 	}
 
 	#endregion
 
-	#region Card back and position
+	#region Gerenciar e posicionar
 
-	public GameObject CardBack;
-
-	public void Esconder()
+	public void EstadoDaCarta()
 	{
 		if ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar"))
 		{
@@ -122,28 +127,33 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			{
 				if (gameObject.tag == "PlayerCard")
 				{
-					CardBack.SetActive(false);
+					//Flipper.MostrarCarta();
+					Flipper.CardBack.SetActive(false);
 				}
 				else
 				{
-					CardBack.SetActive(true);
+					//Flipper.EsconderCarta();
+					Flipper.CardBack.SetActive(true);
 				}
 			}
 			else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 			{
 				if (gameObject.tag == "OpponentCard")
 				{
-					CardBack.SetActive(false);
+					//Flipper.MostrarCarta();
+					Flipper.CardBack.SetActive(false);
 				}
 				else
 				{
-					CardBack.SetActive(true);
+					//Flipper.EsconderCarta();
+					Flipper.CardBack.SetActive(true);
 				}
 			}
 		}
 		else
 		{
-			CardBack.SetActive(false);
+			//Flipper.MostrarCarta();
+			Flipper.CardBack.SetActive(false);
 		}
 	}
 
