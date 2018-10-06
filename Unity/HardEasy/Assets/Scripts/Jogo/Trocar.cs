@@ -46,11 +46,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
-								TrocarPlacaMae(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("PlacaMae", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
 							{
-								TrocarPlacaMae(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("PlacaMae", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -67,11 +67,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
-								TrocarProcessador(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("Processador", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
 							{
-								TrocarProcessador(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("Processador", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -88,11 +88,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
-								TrocarMemoria(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("Memoria", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
 							{
-								TrocarMemoria(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("Memoria", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -109,11 +109,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
-								TrocarPlacaDeVideo(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("PlacaDeVideo", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
 							{
-								TrocarPlacaDeVideo(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("PlacaDeVideo", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -130,11 +130,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
-								TrocarDisco(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("Disco", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
 							{
-								TrocarDisco(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("Disco", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -151,11 +151,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
-								TrocarFonte(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("Fonte", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
 							{
-								TrocarFonte(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("Fonte", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -172,11 +172,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
-								TrocarGabinete(Informacoes.PanelJogador);
+								StartCoroutine(ComecarTroca("Gabinete", 0.5f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
 							{
-								TrocarGabinete(Informacoes.PanelOponente);
+								StartCoroutine(ComecarTroca("Gabinete", 0.5f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -225,8 +225,13 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	[HideInInspector] public int RodadaPlacaMaeJogador = 0, RodadaProcessadorJogador = 0, RodadaMemoriaJogador = 0, RodadaPlacaDeVideoJogador = 0, RodadaDiscoJogador = 0, RodadaFonteJogador = 0, RodadaGabineteJogador = 0; //Variáveis para armazenar a última rodada em que o jogador trocou determinada carta
 	[HideInInspector] public int RodadaPlacaMaeOponente = 0, RodadaProcessadorOponente = 0, RodadaMemoriaOponente = 0, RodadaPlacaDeVideoOponente = 0, RodadaDiscoOponente = 0, RodadaFonteOponente = 0, RodadaGabineteOponente = 0; //Variáveis para armazenar a útlima rodada em que o oponente trocou determinada carta
 
-	//Troca a carta do tipo placa-mãe por outra carta aleatória do mesmo tipo
-	public void TrocarPlacaMae(GameObject Panel)
+	IEnumerator ComecarTroca(string componente, float delayTime, GameObject Panel)
+	{
+		yield return new WaitForSeconds(delayTime);
+		TrocarCartas(componente, Panel);
+	}
+	
+	public void TrocarCartas(string componente, GameObject Panel)
 	{
 		//Verifica se o jogador que jogou a carta tem HardCash suficiente para trocar
 		if (Panel.gameObject.tag == "PlayerCard")
@@ -260,436 +265,274 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 			OutroPanel = Informacoes.PanelJogador;
 		}
 
-		//Armazena a rodada que o jogador jogou a carta
+		//Armazena a rodada que o jogador jogou a carta baseado no parâmetro recebido pela função
 		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
 		{
-			RodadaPlacaMaeJogador = StateMachine.Rodada;
+			switch (componente)
+			{
+				case "PlacaMae":
+					RodadaPlacaMaeJogador = StateMachine.Rodada;
+
+					PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
+
+					//Verifica se a carta é igual a carta que o jogador já tinha ou a carta do jogador adversário
+					while ((placamaeAleatoria == GetComponentInChildren<DisplayPlacaMae>().placaMae) || (placamaeAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae))
+					{
+						placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
+					}
+
+					GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaPlacaMaeMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "Processador":
+					RodadaProcessadorJogador = StateMachine.Rodada;
+
+					Processador processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)]; //Gera um processador aleatório da lista
+
+					while ((processadorAleatorio == GetComponentInChildren<DisplayProcessador>().processador) || (processadorAleatorio == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador))
+					{
+						processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
+					}
+
+					GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaProcessadorMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "Memoria":
+					RodadaMemoriaJogador = StateMachine.Rodada;
+
+					Memoria memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)]; //Gera uma memória aleatória da lista
+
+					while ((memoriaAleatoria == GetComponentInChildren<DisplayMemoria>().memoria) || (memoriaAleatoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria))
+					{
+						memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)];
+					}
+
+					GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaMemoriaMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "PlacaDeVideo":
+					RodadaPlacaDeVideoJogador = StateMachine.Rodada;
+
+					PlacaDeVideo placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)]; //Gera uma placa de vídeo aleatória da lista
+
+					while ((placadevideoAleatoria == GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo) || (placadevideoAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo))
+					{
+						placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)];
+					}
+
+					GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaPlacaDeVideoMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "Disco":
+					RodadaDiscoJogador = StateMachine.Rodada;
+
+					Disco discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)]; //Gera um disco aleatório da lista
+
+					while ((discoAleatorio == GetComponentInChildren<DisplayDisco>().disco) || (discoAleatorio == OutroPanel.GetComponentInChildren<DisplayDisco>().disco))
+					{
+						discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)];
+					}
+
+					GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaDiscoMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "Fonte":
+					RodadaFonteJogador = StateMachine.Rodada;
+
+					Fonte fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)]; //Gera uma fonte aleatória da lista
+
+					while ((fonteAleatoria == GetComponentInChildren<DisplayFonte>().fonte) || (fonteAleatoria == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte))
+					{
+						fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
+					}
+
+					GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaFonteMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+
+				case "Gabinete":
+					RodadaGabineteJogador = StateMachine.Rodada;
+
+					Gabinete gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)]; //Gera um gabinete aleatório da lista
+
+					while ((gabineteAleatorio == GetComponentInChildren<DisplayGabinete>().gabinete) || (gabineteAleatorio == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete))
+					{
+						gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
+					}
+
+					GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.JogadorCartaGabineteMudou = true;
+					HardCash.HardCashJogador--;
+
+					break;
+			}
 		}
 		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
 		{
-			RodadaPlacaMaeOponente = StateMachine.Rodada;
-		}
+			switch (componente)
+			{
+				case "PlacaMae":
+					RodadaPlacaMaeOponente = StateMachine.Rodada;
 
-		PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
+					PlacaMae placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)]; //Gera uma placa-mãe aleatória da lista
 
-		//Verifica se a carta é igual a carta que o jogador já tinha ou a carta do jogador adversário
-		while ((placamaeAleatoria == GetComponentInChildren<DisplayPlacaMae>().placaMae) || (placamaeAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae))
-		{
-			placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
-		}
+					//Verifica se a carta é igual a carta que o jogador já tinha ou a carta do jogador adversário
+					while ((placamaeAleatoria == GetComponentInChildren<DisplayPlacaMae>().placaMae) || (placamaeAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaMae>().placaMae))
+					{
+						placamaeAleatoria = Lista.ListaPlacaMae[Random.Range(0, Lista.ListaPlacaMae.Count)];
+					}
 
-		GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
+					GetComponentInChildren<DisplayPlacaMae>().placaMae = placamaeAleatoria;
 
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaPlacaMaeMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaPlacaMaeMudou = true;
-			HardCash.HardCashOponente--;
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaPlacaMaeMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "Processador":
+					RodadaProcessadorOponente = StateMachine.Rodada;
+
+					Processador processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)]; //Gera um processador aleatório da lista
+
+					while ((processadorAleatorio == GetComponentInChildren<DisplayProcessador>().processador) || (processadorAleatorio == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador))
+					{
+						processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
+					}
+
+					GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaProcessadorMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "Memoria":
+					RodadaMemoriaOponente = StateMachine.Rodada;
+
+					Memoria memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)]; //Gera uma memória aleatória da lista
+
+					while ((memoriaAleatoria == GetComponentInChildren<DisplayMemoria>().memoria) || (memoriaAleatoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria))
+					{
+						memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)];
+					}
+
+					GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaMemoriaMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "PlacaDeVideo":
+					RodadaPlacaDeVideoOponente = StateMachine.Rodada;
+
+					PlacaDeVideo placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)]; //Gera uma placa de vídeo aleatória da lista
+
+					while ((placadevideoAleatoria == GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo) || (placadevideoAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo))
+					{
+						placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)];
+					}
+
+					GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaPlacaDeVideoMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "Disco":
+					RodadaDiscoOponente = StateMachine.Rodada;
+
+					Disco discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)]; //Gera um disco aleatório da lista
+
+					while ((discoAleatorio == GetComponentInChildren<DisplayDisco>().disco) || (discoAleatorio == OutroPanel.GetComponentInChildren<DisplayDisco>().disco))
+					{
+						discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)];
+					}
+
+					GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaDiscoMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "Fonte":
+					RodadaFonteOponente = StateMachine.Rodada;
+
+					Fonte fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)]; //Gera uma fonte aleatória da lista
+
+					while ((fonteAleatoria == GetComponentInChildren<DisplayFonte>().fonte) || (fonteAleatoria == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte))
+					{
+						fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
+					}
+
+					GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaFonteMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+
+				case "Gabinete":
+					RodadaGabineteOponente = StateMachine.Rodada;
+
+					Gabinete gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)]; //Gera um gabinete aleatório da lista
+
+					while ((gabineteAleatorio == GetComponentInChildren<DisplayGabinete>().gabinete) || (gabineteAleatorio == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete))
+					{
+						gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
+					}
+
+					GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
+
+					//Informa que houve alteração na carta
+					Informacoes.OponenteCartaGabineteMudou = true;
+					HardCash.HardCashOponente--;
+
+					break;
+			}
 		}
 
 		Trocou = true;
 	}
-
-	//Troca a carta do tipo processador por outra carta aleatória do mesmo tipo
-	public void TrocarProcessador(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaProcessadorJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaProcessadorOponente = StateMachine.Rodada;
-		}
-
-		Processador processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)]; //Gera um processado aleatório da lista
-
-		while ((processadorAleatorio == GetComponentInChildren<DisplayProcessador>().processador) || (processadorAleatorio == OutroPanel.GetComponentInChildren<DisplayProcessador>().processador))
-		{
-			processadorAleatorio = Lista.ListaProcessador[Random.Range(0, Lista.ListaProcessador.Count)];
-		}
-		GetComponentInChildren<DisplayProcessador>().processador = processadorAleatorio;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaProcessadorMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaProcessadorMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
-	//Troca a carta do tipo memóia por outra carta aleatória do mesmo tipo
-	public void TrocarMemoria(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaMemoriaJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaMemoriaOponente = StateMachine.Rodada;
-		}
-
-		Memoria memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)]; //Gera uma memória aleatória da lista
-
-		while ((memoriaAleatoria == GetComponentInChildren<DisplayMemoria>().memoria) || (memoriaAleatoria == OutroPanel.GetComponentInChildren<DisplayMemoria>().memoria))
-		{
-			memoriaAleatoria = Lista.ListaMemoria[Random.Range(0, Lista.ListaMemoria.Count)];
-		}
-
-		GetComponentInChildren<DisplayMemoria>().memoria = memoriaAleatoria;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaMemoriaMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaMemoriaMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
-	//Troca a carta do tipo placa de vídeo por outra carta aleatória do mesmo tipo
-	public void TrocarPlacaDeVideo(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaPlacaDeVideoJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaPlacaDeVideoOponente = StateMachine.Rodada;
-		}
-
-		PlacaDeVideo placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)]; //Gera uma placa de vídeo aleatória da lista
-
-		while ((placadevideoAleatoria == GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo) || (placadevideoAleatoria == OutroPanel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo))
-		{
-			placadevideoAleatoria = Lista.ListaPlacaDeVideo[Random.Range(0, Lista.ListaPlacaDeVideo.Count)];
-		}
-
-		GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = placadevideoAleatoria;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaPlacaDeVideoMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaPlacaDeVideoMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
-	//Troca a carta do tipo disco por outra carta aleatória do mesmo tipo
-	public void TrocarDisco(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaDiscoJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaDiscoOponente = StateMachine.Rodada;
-		}
-
-		Disco discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)]; //Gera um disco aleatório da lista
-
-		while ((discoAleatorio == GetComponentInChildren<DisplayDisco>().disco) || (discoAleatorio == OutroPanel.GetComponentInChildren<DisplayDisco>().disco))
-		{
-			discoAleatorio = Lista.ListaDisco[Random.Range(0, Lista.ListaDisco.Count)];
-		}
-
-		GetComponentInChildren<DisplayDisco>().disco = discoAleatorio;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaDiscoMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaDiscoMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
-	//Troca a carta do tipo fonte por outra carta aleatória do mesmo tipo
-	public void TrocarFonte(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaFonteJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaFonteOponente = StateMachine.Rodada;
-		}
-
-		Fonte fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)]; //Gera uma fonte aleatória da lista
-
-		while ((fonteAleatoria == GetComponentInChildren<DisplayFonte>().fonte) || (fonteAleatoria == OutroPanel.GetComponentInChildren<DisplayFonte>().fonte))
-		{
-			fonteAleatoria = Lista.ListaFonte[Random.Range(0, Lista.ListaFonte.Count)];
-		}
-
-		GetComponentInChildren<DisplayFonte>().fonte = fonteAleatoria;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaFonteMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaFonteMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
-	//Troca a carta do tipo gabinete por outra carta aleatória do mesmo tipo
-	public void TrocarGabinete(GameObject Panel)
-	{
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			if (HardCash.HardCashJogador == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-		else if (Panel.gameObject.tag == "OpponentCard")
-		{
-			if (HardCash.HardCashOponente == 0)
-			{
-				Debug.Log("HardCash insuficiente!");
-				return;
-			}
-		}
-
-		Manager.PodeInteragir = false;
-
-		GameObject OutroPanel;
-
-		if (Panel.gameObject.tag == "PlayerCard")
-		{
-			OutroPanel = Informacoes.PanelOponente;
-		}
-		else
-		{
-			OutroPanel = Informacoes.PanelJogador;
-		}
-
-		if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoJogador)
-		{
-			RodadaGabineteJogador = StateMachine.Rodada;
-		}
-		else if (StateMachine.EstadoAtual == StateMachine.Estados.VezDoOponente)
-		{
-			RodadaGabineteOponente = StateMachine.Rodada;
-		}
-
-		Gabinete gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)]; //Gera um gabinete aleatório da lista
-
-		while ((gabineteAleatorio == GetComponentInChildren<DisplayGabinete>().gabinete) || (gabineteAleatorio == OutroPanel.GetComponentInChildren<DisplayGabinete>().gabinete))
-		{
-			gabineteAleatorio = Lista.ListaGabinete[Random.Range(0, Lista.ListaGabinete.Count)];
-		}
-
-		GetComponentInChildren<DisplayGabinete>().gabinete = gabineteAleatorio;
-
-		//Informa que houve alteração na carta
-		if (Panel == Informacoes.PanelJogador)
-		{
-			Informacoes.JogadorCartaGabineteMudou = true;
-			HardCash.HardCashJogador--;
-		}
-		else if (Panel == Informacoes.PanelOponente)
-		{
-			Informacoes.OponenteCartaGabineteMudou = true;
-			HardCash.HardCashOponente--;
-		}
-
-		Trocou = true;
-	}
-
+	
 	#endregion
 }

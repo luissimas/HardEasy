@@ -323,7 +323,7 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 					break;
 
 				case "Disco":
-					RodadaPlacaMaeOponente = StateMachine.Rodada;
+					RodadaDiscoOponente = StateMachine.Rodada;
 					break;
 
 				case "Fonte":
