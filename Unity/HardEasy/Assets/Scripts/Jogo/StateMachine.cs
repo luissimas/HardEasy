@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
@@ -15,6 +16,7 @@ public class StateMachine : MonoBehaviour
 		GerenciadorDeRodadas(); //Verifica o gerenciador de rodadas a cada frame
 		ProximoEstadoAoComparar(); //Avança uma rodada sempre que as cartas forem comparadas
 		ProximoEstadoAoTrocar(); //Avança uma rodada sempre que as cartas forem trocadas
+		JogadorText.text = TextVez;
 	}
 
 	public enum Estados { Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
@@ -25,6 +27,9 @@ public class StateMachine : MonoBehaviour
 
 	public static bool Comparando = false; //Variável para gerenciar se as cartas estão sendo comparadas ou não
 	public static bool Trocando = false; //Variável para gerenciar se as cartas estão sendo trocadas ou não
+
+	public TMP_Text JogadorText;
+	public static string TextVez;
 
 	//Gerencia o sistema de rodadas 
 	public static void GerenciadorDeRodadas()
@@ -44,10 +49,12 @@ public class StateMachine : MonoBehaviour
 			case (Estados.VezDoJogador):
 				Manager.JogadorPodeInteragir = true;
 				Manager.OponentePodeInteragir = false;
+				TextVez = "Vez de: " + Informacoes.NomeJogador1;
 				break;
 			case (Estados.VezDoOponente):
 				Manager.JogadorPodeInteragir = false;
 				Manager.OponentePodeInteragir = true;
+				TextVez = "Vez de: " + Informacoes.NomeJogador2;
 				break;
 			case (Estados.Fim):
 				Manager.JogadorPodeInteragir = false;
