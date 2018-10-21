@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour {
+public class MenuManager : MonoBehaviour
+{
 
 	public GameObject MenuPrincipalInspector, MenuOpcoesInspector, MenuTutorialInspector;
 	public static GameObject MenuPrincipal, MenuOpcoes, MenuTutorial;

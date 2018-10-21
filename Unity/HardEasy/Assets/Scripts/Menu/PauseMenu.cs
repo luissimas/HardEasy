@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 
 	public static bool Pausado = false;
-	public GameObject PauseMenuUI;
+	public GameObject PauseMenuUI, OptionsMenuUI;
 	
 	void Update () 
 	{
@@ -24,7 +25,6 @@ public class PauseMenu : MonoBehaviour {
 
 	public void Continuar()
 	{
-		Informacoes.CanvasPrincipal.SetActive(true);
 		Manager.PodeInteragir = true;
 		PauseMenuUI.SetActive(false);
 		Time.timeScale = 1;
@@ -33,7 +33,6 @@ public class PauseMenu : MonoBehaviour {
 
 	public void Pausar()
 	{
-		Informacoes.CanvasPrincipal.SetActive(false);
 		Manager.PodeInteragir = false;
 		PauseMenuUI.SetActive(true);
 		Time.timeScale = 0;
@@ -42,11 +41,14 @@ public class PauseMenu : MonoBehaviour {
 
 	public void CarregarOpcoes()
 	{
-
+		OptionsMenuUI.SetActive(true);
 	}
 
 	public void SairDoJogo()
 	{
+		OptionsMenuUI.SetActive(false);
+		Continuar();
 
+		SceneManager.LoadScene(0);
 	}
 }
