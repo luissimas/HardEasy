@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
-  m_Name: Ryzen 3 1200
+  m_Name: i7-6950X
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: ace01edb1dad344478f067e335d045ba, type: 3}
-  Nome: AMD Ryzen 3 1200
-  Socket: AM4
-  Nucleos: 4
-  Threads: 4
-  Clock: 3.4
-  TDP: 65
-  Preco: 414
+  Imagem: {fileID: 21300000, guid: c996b5fd7d4df0c4892c3e512df5e587, type: 3}
+  Nome: 'Intel Core i7-6950X '
+  Socket: LGA1151
+  Nucleos: 10
+  Threads: 20
+  Clock: 4
+  TDP: 140
+  Preco: 6780

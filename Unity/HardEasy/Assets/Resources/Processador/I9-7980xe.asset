@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
-  m_Name: Ryzen 3 1200
+  m_Name: I9-7980xe
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: ace01edb1dad344478f067e335d045ba, type: 3}
-  Nome: AMD Ryzen 3 1200
-  Socket: AM4
-  Nucleos: 4
-  Threads: 4
-  Clock: 3.4
-  TDP: 65
-  Preco: 414
+  Imagem: {fileID: 21300000, guid: 462cc58ad8cbd75448e941c0dfbc0889, type: 3}
+  Nome: Intel Core i9 7980XE
+  Socket: LGA 2066
+  Nucleos: 18
+  Threads: 36
+  Clock: 2.6
+  TDP: 91
+  Preco: 9100

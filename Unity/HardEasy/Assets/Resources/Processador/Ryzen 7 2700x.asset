@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
-  m_Name: Ryzen 3 1200
+  m_Name: Ryzen 7 2700x
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: ace01edb1dad344478f067e335d045ba, type: 3}
-  Nome: AMD Ryzen 3 1200
+  Imagem: {fileID: 21300000, guid: 795421e0926b0054c9b4a62fccc9fdaf, type: 3}
+  Nome: AMD RYZEN 7 2700X
   Socket: AM4
-  Nucleos: 4
-  Threads: 4
-  Clock: 3.4
-  TDP: 65
-  Preco: 414
+  Nucleos: 8
+  Threads: 16
+  Clock: 4.35
+  TDP: 105
+  Preco: 1589.9
