@@ -5,17 +5,17 @@ using TMPro;
 
 public class Nomes : MonoBehaviour {
 
-	public TMP_Text Jogador1Nome;
-	public TMP_Text Jogador2nome;
+	public TMP_Text JogadorNome;
+	public TMP_Text OponenteNome;
 
 	public void setNomes()
 	{
-		if((Jogador1Nome.text.Trim().Length > 2) && (Jogador2nome.text.Trim().Length > 2))
+		if((JogadorNome.text.Trim().Length > 2) && (OponenteNome.text.Trim().Length > 2))
 		{
 			MenuManager menuManager = new MenuManager();
 
-			Informacoes.NomeJogador1 = Jogador1Nome.text;
-			Informacoes.NomeJogador2 = Jogador2nome.text;
+			Informacoes.NomeJogador = JogadorNome.text;
+			Informacoes.NomeOponente = OponenteNome.text;
 			
 			menuManager.Play();
 		}

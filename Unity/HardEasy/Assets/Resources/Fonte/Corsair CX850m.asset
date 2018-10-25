@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da4f92dd1904704398f0a010f557fa5, type: 3}
-  m_Name: Corsair cs850m
+  m_Name: Corsair CX850m
   m_EditorClassIdentifier: 
   Imagem: {fileID: 0}
   Nome: 

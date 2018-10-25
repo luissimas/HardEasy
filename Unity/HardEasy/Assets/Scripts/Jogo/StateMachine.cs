@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateMachine : MonoBehaviour
 {
@@ -22,8 +23,19 @@ public class StateMachine : MonoBehaviour
 	public enum Estados { Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
 
 	public static Estados EstadoAtual; //Variável para identificar o estado atual do jogo
+	public static Estados EstadoVitorioso; //Variável para identificar quem ganhou o jogo
 	public static int Rodada = 0; //Variável para identificar em qual rodada o jogo está
 	public static bool EstadoMudou;
+
+	public static string NomeDoVencedor;
+
+	public static Processador ProcessadorVitorioso;
+	public static Memoria MemoriaVitorioso;
+	public static PlacaMae PlacaMaeVitorioso;
+	public static PlacaDeVideo PlacaDeVideoVitorioso;
+	public static Disco DiscoVitorioso;
+	public static Fonte FonteVitorioso;
+	public static Gabinete GabineteVitorioso;
 
 	public static bool Comparando = false; //Variável para gerenciar se as cartas estão sendo comparadas ou não
 	public static bool Trocando = false; //Variável para gerenciar se as cartas estão sendo trocadas ou não
@@ -32,7 +44,7 @@ public class StateMachine : MonoBehaviour
 	public static string TextVez;
 
 	//Gerencia o sistema de rodadas 
-	public static void GerenciadorDeRodadas()
+	public void GerenciadorDeRodadas()
 	{
 		//Identifica qual o estado atual do jogo
 		switch (EstadoAtual)
@@ -49,17 +61,45 @@ public class StateMachine : MonoBehaviour
 			case (Estados.VezDoJogador):
 				Manager.JogadorPodeInteragir = true;
 				Manager.OponentePodeInteragir = false;
-				TextVez = "Vez de: " + Informacoes.NomeJogador1;
+				TextVez = "Vez de: " + Informacoes.NomeJogador;
 				break;
 			case (Estados.VezDoOponente):
 				Manager.JogadorPodeInteragir = false;
 				Manager.OponentePodeInteragir = true;
-				TextVez = "Vez de: " + Informacoes.NomeJogador2;
+				TextVez = "Vez de: " + Informacoes.NomeOponente;
 				break;
 			case (Estados.Fim):
 				Manager.JogadorPodeInteragir = false;
 				Manager.OponentePodeInteragir = false;
 				Manager.PodeInteragir = false;
+
+				if (EstadoVitorioso == Estados.VezDoJogador)
+				{
+					NomeDoVencedor = Informacoes.NomeJogador;
+
+					ProcessadorVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayProcessador>().processador;
+					MemoriaVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayMemoria>().memoria;
+					PlacaMaeVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayPlacaMae>().placaMae;
+					PlacaDeVideoVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo;
+					DiscoVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayDisco>().disco;
+					FonteVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayFonte>().fonte;
+					GabineteVitorioso = Informacoes.PanelJogador.gameObject.GetComponentInChildren<DisplayGabinete>().gabinete;
+				}
+				else if (EstadoVitorioso == Estados.VezDoOponente)
+				{
+					NomeDoVencedor = Informacoes.NomeOponente;
+
+					ProcessadorVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayProcessador>().processador;
+					MemoriaVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayMemoria>().memoria;
+					PlacaMaeVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayPlacaMae>().placaMae;
+					PlacaDeVideoVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo;
+					DiscoVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayDisco>().disco;
+					FonteVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayFonte>().fonte;
+					GabineteVitorioso = Informacoes.PanelOponente.gameObject.GetComponentInChildren<DisplayGabinete>().gabinete;
+				}
+
+				StartCoroutine(CarregarATelaFinal());
+				
 				break;
 		}
 
@@ -76,6 +116,7 @@ public class StateMachine : MonoBehaviour
 				&& Compatibilidade.PlacaDeVideoConectaPlacaMae(Informacoes.PanelJogador) && Compatibilidade.FonteConectaPlacaDeVideo(Informacoes.PanelJogador)))
 			{
 				//Finaliza o jogo
+				EstadoVitorioso = EstadoAtual;
 				EstadoAtual = Estados.Fim;
 			}
 			else
@@ -92,6 +133,7 @@ public class StateMachine : MonoBehaviour
 				&& Compatibilidade.PlacaDeVideoConectaPlacaMae(Informacoes.PanelOponente) && Compatibilidade.FonteConectaPlacaDeVideo(Informacoes.PanelOponente)))
 			{
 				//Finaliza o jogo
+				EstadoVitorioso = EstadoAtual;
 				EstadoAtual = Estados.Fim;
 			}
 			else
@@ -125,5 +167,12 @@ public class StateMachine : MonoBehaviour
 			Trocando = false;
 			ProximoEstado();
 		}
+	}
+
+	public IEnumerator CarregarATelaFinal()
+	{
+		yield return new WaitForSeconds(1f);
+
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 }
