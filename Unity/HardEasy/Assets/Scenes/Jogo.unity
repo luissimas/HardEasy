@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comparou: 0
-  RodadasAteComparar: 0
+  RodadasAteComparar: 3
   RodadaPlacaMaeJogador: 0
   RodadaProcessadorJogador: 0
   RodadaMemoriaJogador: 0
@@ -4670,21 +4670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trocou: 0
-  RodadasAteTrocar: 0
-  RodadaPlacaMaeJogador: 0
-  RodadaProcessadorJogador: 0
-  RodadaMemoriaJogador: 0
-  RodadaPlacaDeVideoJogador: 0
-  RodadaDiscoJogador: 0
-  RodadaFonteJogador: 0
-  RodadaGabineteJogador: 0
-  RodadaPlacaMaeOponente: 0
-  RodadaProcessadorOponente: 0
-  RodadaMemoriaOponente: 0
-  RodadaPlacaDeVideoOponente: 0
-  RodadaDiscoOponente: 0
-  RodadaFonteOponente: 0
-  RodadaGabineteOponente: 0
+  RodadasAteTrocar: 5
 --- !u!114 &1180512567
 MonoBehaviour:
   m_ObjectHideFlags: 0

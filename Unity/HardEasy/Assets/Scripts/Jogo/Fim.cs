@@ -7,22 +7,31 @@ using UnityEngine.SceneManagement;
 public class Fim : MonoBehaviour {
 
 	public TMP_Text JogadorNomeText;
+	public GameObject Panel;
 
 	void Start ()
 	{
-		JogadorNomeText.text = StateMachine.NomeDoVencedor + "venceu o jogo!";
+		JogadorNomeText.text = "VITORIA DE " + StateMachine.NomeDoVencedor.ToUpperInvariant();
 		CarregarCartas();
 	}
 
 	public void CarregarCartas()
 	{
-		GetComponentInChildren<DisplayProcessador>().processador = StateMachine.ProcessadorVitorioso;
-		GetComponentInChildren<DisplayMemoria>().memoria = StateMachine.MemoriaVitorioso;
-		GetComponentInChildren<DisplayPlacaMae>().placaMae = StateMachine.PlacaMaeVitorioso;
-		GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = StateMachine.PlacaDeVideoVitorioso;
-		GetComponentInChildren<DisplayDisco>().disco = StateMachine.DiscoVitorioso;
-		GetComponentInChildren<DisplayFonte>().fonte = StateMachine.FonteVitorioso;
-		GetComponentInChildren<DisplayGabinete>().gabinete = StateMachine.GabineteVitorioso;
+		Panel.GetComponentInChildren<DisplayProcessador>().processador = StateMachine.ProcessadorVitorioso;
+		Panel.GetComponentInChildren<DisplayMemoria>().memoria = StateMachine.MemoriaVitorioso;
+		Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae = StateMachine.PlacaMaeVitorioso;
+		Panel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = StateMachine.PlacaDeVideoVitorioso;
+		Panel.GetComponentInChildren<DisplayDisco>().disco = StateMachine.DiscoVitorioso;
+		Panel.GetComponentInChildren<DisplayFonte>().fonte = StateMachine.FonteVitorioso;
+		Panel.GetComponentInChildren<DisplayGabinete>().gabinete = StateMachine.GabineteVitorioso;
+
+		Informacoes.JogadorCartaPlacaMaeMudou = true;
+		Informacoes.JogadorCartaProcessadorMudou = true;
+		Informacoes.JogadorCartaMemoriaMudou = true;
+		Informacoes.JogadorCartaPlacaDeVideoMudou = true;
+		Informacoes.JogadorCartaDiscoMudou = true;
+		Informacoes.JogadorCartaFonteMudou = true;
+		Informacoes.JogadorCartaGabineteMudou = true;
 	}
 
 	public void JogarNovamente()

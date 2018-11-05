@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Imagem: {fileID: 21300000, guid: 3e696cbd814dc2b46bd2ceb1f6e28acb, type: 3}
   Nome: Thermaltake C22
-  FormatoPlacaMae: ATX, Micro-Atx, Mini-ITX
+  FormatoPlacaMae: ATX, mATX, Mini-ITX
   QuantidadeDeFans: 4
   SlotsPCI: 7
   BaiasHDSSD: 3

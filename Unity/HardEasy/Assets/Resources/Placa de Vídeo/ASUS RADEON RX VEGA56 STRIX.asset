@@ -16,7 +16,7 @@ MonoBehaviour:
   Clock: 1474
   Memoria: 8
   SLI: 0
-  Crossfire: 1
+  Crossfire: 0
   Consumo: 210
   FonteMinima: 500
   Preco: 2499
