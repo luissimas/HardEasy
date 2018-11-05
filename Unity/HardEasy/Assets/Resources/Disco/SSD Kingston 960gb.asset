@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f1a0a6a824ec246a89e369aa3ef1f0, type: 3}
+  m_Name: SSD Kingston 960gb
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 21300000, guid: a8a903f89dcfa214fb68242aea594e8b, type: 3}
+  Nome: SSD Kingston
+  CapacidadeDeArmazenamento: 960
+  Velocidade: 500
+  Preco: 1598.9

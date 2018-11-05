@@ -20,8 +20,8 @@ public class Informacoes : MonoBehaviour
 	public static bool OponenteCartaPlacaMaeMudou = false, OponenteCartaProcessadorMudou = false, OponenteCartaMemoriaMudou = false, OponenteCartaPlacaDeVideoMudou = false, OponenteCartaDiscoMudou = false, OponenteCartaFonteMudou = false, OponenteCartaGabineteMudou = false;
 
 	//Variáveis para armazenar os nomes dos jogadores
-	public static string NomeJogador1;
-	public static string NomeJogador2;
+	public static string NomeJogador;
+	public static string NomeOponente;
 
 	private void Awake()
 	{

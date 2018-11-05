@@ -9,6 +9,7 @@ TagManager:
   - Drop
   - Comparar
   - Trocar
+  - Final
   layers:
   - Default
   - TransparentFX

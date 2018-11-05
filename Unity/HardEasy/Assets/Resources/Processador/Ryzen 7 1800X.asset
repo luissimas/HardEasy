@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
+  m_Name: Ryzen 7 1800X
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 21300000, guid: bb6f8ded92ef3f647a94688aec93a3eb, type: 3}
+  Nome: AMD Ryzen 1800X
+  Socket: AM4
+  Nucleos: 8
+  Threads: 16
+  Clock: 3.6
+  TDP: 95
+  Preco: 1099.9

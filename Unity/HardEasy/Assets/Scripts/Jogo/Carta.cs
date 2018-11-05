@@ -29,15 +29,15 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	Vector3 PosicaoOriginal;
 	Vector3 EscalaOriginal;
 
-	public GameObject PanelJogador;
-	public GameObject PanelOponente;
+	[HideInInspector] public GameObject PanelJogador = Informacoes.PanelJogador;
+	[HideInInspector] public GameObject PanelOponente = Informacoes.PanelOponente;
 
 	public float ScaleOffset;
 
 	//Identifica se o mouse entrou em cima do objeto
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if ((((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir))) && Manager.PodeInteragir)
+		if (((((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir))) && Manager.PodeInteragir) || (transform.parent.gameObject.tag == "Final"))
 		{
 			//Verifica a tag do objeto
 			if (gameObject.tag == "PlayerCard")

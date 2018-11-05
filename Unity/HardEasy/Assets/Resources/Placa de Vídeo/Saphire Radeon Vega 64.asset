@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
+  m_Name: Saphire Radeon Vega 64
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 0}
+  Nome: 
+  Clock: 0
+  Memoria: 0
+  SLI: 0
+  Crossfire: 0
+  Consumo: 0
+  FonteMinima: 0
+  Preco: 0

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
+  m_Name: EVGA Geforce GTX 1050
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 21300000, guid: 47fc4b46ba330bb49af59b31298b2aec, type: 3}
+  Nome: GTX 1050
+  Clock: 1354
+  Memoria: 2
+  SLI: 0
+  Crossfire: 0
+  Consumo: 75
+  FonteMinima: 300
+  Preco: 705.9

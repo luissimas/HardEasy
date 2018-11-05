@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5093f1aab924244c814bb8ce085240c, type: 3}
+  m_Name: ASUS ROG STRIX X470-F GAMING
+  m_EditorClassIdentifier: 
+  Imagem: {fileID: 21300000, guid: b6d16d0a5f94626439bd16370424ec98, type: 3}
+  Nome: ROG STRIX X470-F GAMING
+  Socket: AM4
+  DDR: DDR4
+  QuantidadeMemoria: 64
+  SlotsPCIE: 7
+  PortasSata: 6
+  SuporteSLI: 1
+  SuporteCrossfire: 1
+  Formato: ATX
+  Preco: 1499.9

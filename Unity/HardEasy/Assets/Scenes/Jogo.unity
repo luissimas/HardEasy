@@ -282,7 +282,7 @@ RectTransform:
   - {fileID: 2035857274}
   - {fileID: 1580024976}
   m_Father: {fileID: 298226955}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -602,6 +602,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224557178892230154, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224509148538461376, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224322376310265128, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224227752557959256, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177973152873604, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177973152873604, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177973152873604, guid: fbf1d0ff1527ba041a7118716abf3211,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf1d0ff1527ba041a7118716abf3211, type: 2}
   m_IsPrefabAsset: 0
@@ -761,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comparou: 0
-  RodadasAteComparar: 5
+  RodadasAteComparar: 0
   RodadaPlacaMaeJogador: 0
   RodadaProcessadorJogador: 0
   RodadaMemoriaJogador: 0
@@ -993,6 +1028,41 @@ Prefab:
       propertyPath: slidersCarta.Array.data[3]
       value: 
       objectReference: {fileID: 507418140}
+    - target: {fileID: 224681829682756290, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224997431073703092, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224263182573176102, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224092977632912872, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895534234617142, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895534234617142, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895534234617142, guid: e6f1cffb6a9c72a46b6fb191c3e04749,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f1cffb6a9c72a46b6fb191c3e04749, type: 2}
   m_IsPrefabAsset: 0
@@ -1393,6 +1463,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224184580191861046, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224627902679299958, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992139704013714, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224784960748039724, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114142153213013968, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114142153213013968, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114142153213013968, guid: d10c0bb291ff31e4cb9ad5c358ee2146,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10c0bb291ff31e4cb9ad5c358ee2146, type: 2}
   m_IsPrefabAsset: 0
@@ -1584,7 +1689,7 @@ Prefab:
     - target: {fileID: 224359213085912176, guid: fecd541ef4ab76b4180618aea25c7b60,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224359213085912176, guid: fecd541ef4ab76b4180618aea25c7b60,
         type: 2}
@@ -1682,9 +1787,9 @@ RectTransform:
   - {fileID: 107747631}
   - {fileID: 769429638}
   - {fileID: 703475134}
-  - {fileID: 35277806}
   - {fileID: 943103051}
   - {fileID: 1824844899}
+  - {fileID: 35277806}
   - {fileID: 715777996}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2426,6 +2531,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224735936924032224, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224172211832865056, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224213169097606238, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224786233022300922, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114882239499699368, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114882239499699368, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114882239499699368, guid: 7a3bb7b80d788d0449fc0ef5e9a36177,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3bb7b80d788d0449fc0ef5e9a36177, type: 2}
   m_IsPrefabAsset: 0
@@ -2541,10 +2681,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ebd110ee38f0247855c2868b4604e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderVolumePrincipal: {fileID: 332911392}
-  SliderVolumeDaMusica: {fileID: 175854313}
-  TextVolumePrincial: {fileID: 1343214841}
-  TextVolumeDaMusica: {fileID: 2040521643}
+  SliderVolumePrincipal: {fileID: 0}
+  SliderVolumeDaMusica: {fileID: 0}
+  TextVolumePrincial: {fileID: 0}
+  TextVolumeDaMusica: {fileID: 0}
 --- !u!114 &715777994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,6 +3356,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224016743697271570, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224432858819348400, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224788559362519910, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224638806037053604, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805177668679172, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805177668679172, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805177668679172, guid: 1085f27fdc4c493459baaf28e205698a,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1085f27fdc4c493459baaf28e205698a, type: 2}
   m_IsPrefabAsset: 0
@@ -3568,6 +3743,41 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224130024627074306, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224744090147098080, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224482496823953702, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224784436050057354, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114030873145670736, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114030873145670736, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114030873145670736, guid: 547f1e33980aaaf4f9913a13e252e0be,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547f1e33980aaaf4f9913a13e252e0be, type: 2}
@@ -4056,6 +4266,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224531295105731120, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224778149490736578, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224772211487984806, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224928549128213570, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110675186822670, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110675186822670, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110675186822670, guid: 879bcf94c563c6e459fb3437fd85150e,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879bcf94c563c6e459fb3437fd85150e, type: 2}
   m_IsPrefabAsset: 0
@@ -4316,6 +4561,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224088402827185002, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224830242737571580, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224230526354998854, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224982477729535966, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626387963912368, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626387963912368, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626387963912368, guid: ac09b201d83fdae4eb0fd91e998aef5f,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac09b201d83fdae4eb0fd91e998aef5f, type: 2}
   m_IsPrefabAsset: 0
@@ -4390,7 +4670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trocou: 0
-  RodadasAteTrocar: 3
+  RodadasAteTrocar: 0
   RodadaPlacaMaeJogador: 0
   RodadaProcessadorJogador: 0
   RodadaMemoriaJogador: 0
@@ -4672,6 +4952,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224693152236097014, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224061183174982528, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224814281528453170, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224394377914064502, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014215377219670, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014215377219670, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014215377219670, guid: bf930dac59a0b8f4089fee16a7c7db1f,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf930dac59a0b8f4089fee16a7c7db1f, type: 2}
   m_IsPrefabAsset: 0
@@ -4898,6 +5213,41 @@ Prefab:
       propertyPath: slidersCarta.Array.data[3]
       value: 
       objectReference: {fileID: 1818111289}
+    - target: {fileID: 224232262446589956, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224156117050897422, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224422467837974016, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224068312506425230, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114634754743893424, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114634754743893424, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114634754743893424, guid: 65de95f456ebac3448f78b66fae801b4,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65de95f456ebac3448f78b66fae801b4, type: 2}
   m_IsPrefabAsset: 0
@@ -5896,6 +6246,41 @@ Prefab:
       propertyPath: slidersCarta.Array.data[3]
       value: 
       objectReference: {fileID: 1916676267}
+    - target: {fileID: 224140230791493358, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224750489630258242, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224368905244837046, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224250402925389946, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220910503367602, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220910503367602, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220910503367602, guid: a70c207f5731ab140a35c078a9e7bc65,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70c207f5731ab140a35c078a9e7bc65, type: 2}
   m_IsPrefabAsset: 0
@@ -6260,7 +6645,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298226955}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7062,6 +7447,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224301321229614076, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224100886266907154, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224091240339230262, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224925240573957796, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999856613069798, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999856613069798, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999856613069798, guid: f35ea0017d05c1d499543065fc6c471a,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35ea0017d05c1d499543065fc6c471a, type: 2}
   m_IsPrefabAsset: 0
@@ -7302,6 +7722,41 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224883800422674108, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224805745450467076, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224067203103392962, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000481675376852, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159103058654624, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159103058654624, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159103058654624, guid: 58a23538c24345947b4c2529b93c30d3,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a23538c24345947b4c2529b93c30d3, type: 2}
   m_IsPrefabAsset: 0
@@ -7527,6 +7982,41 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224538801255376118, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224217114525662328, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224837946042676326, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224671525288274316, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361278106137832, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: corDestaqueSliders.b
+      value: 0.10481954
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361278106137832, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: corDestaqueSliders.g
+      value: 0.07186722
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361278106137832, guid: 69889fb55e2fcf649ba814e8eaaa116c,
+        type: 2}
+      propertyPath: corDestaqueSliders.r
+      value: 0.8962264
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69889fb55e2fcf649ba814e8eaaa116c, type: 2}
