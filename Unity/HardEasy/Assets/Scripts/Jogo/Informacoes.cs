@@ -23,6 +23,13 @@ public class Informacoes : MonoBehaviour
 	public static string NomeJogador;
 	public static string NomeOponente;
 
+	//Variáveis para armazenar o botão para continuar
+	public GameObject btnContinuarInspector;
+	public static GameObject btnContinuar;
+
+	//Variavel para armazenar o tempo da rodada
+	public static int tempoRodada;
+
 	private void Awake()
 	{
 		SetPanel();
@@ -38,5 +45,7 @@ public class Informacoes : MonoBehaviour
 
 		PanelComparar = PanelCompararInspector;
 		PanelTrocar = PanelTrocarInspector;
+
+		btnContinuar = btnContinuarInspector;
 	} 
 }

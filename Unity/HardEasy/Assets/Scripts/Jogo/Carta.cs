@@ -31,16 +31,17 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
 	[HideInInspector] public GameObject PanelJogador = Informacoes.PanelJogador;
 	[HideInInspector] public GameObject PanelOponente = Informacoes.PanelOponente;
+	public GameObject PanelFinal;
 
 	public float ScaleOffset;
 
 	//Identifica se o mouse entrou em cima do objeto
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if (((((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir))) && Manager.PodeInteragir) || (transform.parent.gameObject.tag == "Final"))
+		if (((((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente) && (Manager.OponentePodeInteragir))) && Manager.PodeInteragir) || (transform.parent.gameObject == PanelFinal))
 		{
 			//Verifica a tag do objeto
-			if (gameObject.tag == "PlayerCard")
+			if ((gameObject.tag == "PlayerCard"))
 			{
 				gameObject.transform.SetAsLastSibling(); //Joga a carta por último na hierarquia, dessa forma ela fica na frente de todos os outros elementos
 				gameObject.GetComponent<RectTransform>().transform.position = new Vector3(PosicaoOriginal.x, (PosicaoOriginal.y + 20)); //Modifica a posição da carta para que ela não saia da tela ao aumentar a escala
@@ -127,12 +128,10 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			{
 				if (gameObject.tag == "PlayerCard")
 				{
-					//Flipper.MostrarCarta();
 					Flipper.CardBack.SetActive(false);
 				}
 				else
 				{
-					//Flipper.EsconderCarta();
 					Flipper.CardBack.SetActive(true);
 				}
 			}
@@ -140,19 +139,16 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 			{
 				if (gameObject.tag == "OpponentCard")
 				{
-					//Flipper.MostrarCarta();
 					Flipper.CardBack.SetActive(false);
 				}
 				else
 				{
-					//Flipper.EsconderCarta();
 					Flipper.CardBack.SetActive(true);
 				}
 			}
 		}
 		else
 		{
-			//Flipper.MostrarCarta();
 			Flipper.CardBack.SetActive(false);
 		}
 	}
@@ -161,7 +157,7 @@ public class Carta : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 	public void Posicionar()
 	{
 		if ((!(((transform.parent.gameObject == PanelJogador) && (Manager.JogadorPodeInteragir)) || ((transform.parent.gameObject == PanelOponente)
-			&& (Manager.OponentePodeInteragir)))) && ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar")))
+			&& (Manager.OponentePodeInteragir)) || (transform.parent.gameObject == PanelFinal))) && ((transform.parent.tag != "Comparar") && (transform.parent.tag != "Trocar")))
 		{
 			gameObject.GetComponent<RectTransform>().transform.position = PosicaoOriginal; //Volta a posição do objeto para o tamanho normal
 			gameObject.GetComponent<RectTransform>().transform.localScale = EscalaOriginal; //Volta a escala do objeto para o tamanho normal

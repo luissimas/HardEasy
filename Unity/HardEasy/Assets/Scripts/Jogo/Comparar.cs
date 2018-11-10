@@ -54,7 +54,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayPlacaMae>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("PlacaMae", 0.5f));
+							StartCoroutine(ComecarComparacao("PlacaMae", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayProcessador>() != null)
@@ -77,7 +78,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayProcessador>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("Processador", 0.5f));
+							StartCoroutine(ComecarComparacao("Processador", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayMemoria>() != null)
@@ -100,7 +102,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayMemoria>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("Memoria", 0.5f));
+							StartCoroutine(ComecarComparacao("Memoria", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayPlacaDeVideo>() != null)
@@ -123,7 +126,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("PlacaDeVideo", 0.5f));
+							StartCoroutine(ComecarComparacao("PlacaDeVideo", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayDisco>() != null)
@@ -146,7 +150,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayDisco>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("Disco", 0.5f));
+							StartCoroutine(ComecarComparacao("Disco", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayFonte>() != null)
@@ -169,7 +174,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayFonte>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("Fonte", 0.5f));
+							StartCoroutine(ComecarComparacao("Fonte", 1f));
+
 						}
 					}
 					else if (GetComponentInChildren<DisplayGabinete>() != null)
@@ -192,7 +198,8 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 								Informacoes.PanelJogador.GetComponentInChildren<DisplayGabinete>().gameObject.transform.SetParent(this.transform);
 							}
 
-							StartCoroutine(ComecarComparacao("Gabinete", 0.5f));
+							StartCoroutine(ComecarComparacao("Gabinete", 1f));
+
 						}
 					}
 
@@ -201,15 +208,19 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 						GetComponentsInChildren<CanvasGroup>()[i].blocksRaycasts = false;
 					}
 
-					Invoke("RetornarCartas", 3);
+					StartCoroutine(Pausar(1.5f));
+
+					StartCoroutine(RetornarCartas(3f));
 				}
 			}
 		}
 	}
 
 	//Retorna as cartas para o baralho de cada jogador
-	public void RetornarCartas()
+	IEnumerator RetornarCartas(float delayTime)
 	{
+		yield return new WaitForSeconds(delayTime);
+		
 		while (GetComponentInChildren<CanvasGroup>() != null)
 		{
 			for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
@@ -238,12 +249,23 @@ public class Comparar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		}
 	}
 
+	IEnumerator Pausar(float delayTime)
+	{
+		yield return new WaitForSeconds(delayTime);
+
+		if (Comparou)
+		{
+			Informacoes.btnContinuar.SetActive(true);
+			Time.timeScale = 0f;
+		}
+	}
+
 	#endregion
 
 	#region Comparação de Atributos
 
-	[HideInInspector] public int RodadaPlacaMaeJogador = 0, RodadaProcessadorJogador = 0, RodadaMemoriaJogador = 0, RodadaPlacaDeVideoJogador = 0, RodadaDiscoJogador = 0, RodadaFonteJogador = 0, RodadaGabineteJogador = 0; //Variáveis para armazenar a última rodada em que o jogador comparou determinada carta
-	[HideInInspector] public int RodadaPlacaMaeOponente = 0, RodadaProcessadorOponente = 0, RodadaMemoriaOponente = 0, RodadaPlacaDeVideoOponente = 0, RodadaDiscoOponente = 0, RodadaFonteOponente = 0, RodadaGabineteOponente = 0; //Variáveis para armazenar a útlima rodada em que o oponente comparou determinada carta
+	public static int RodadaPlacaMaeJogador = 0, RodadaProcessadorJogador = 0, RodadaMemoriaJogador = 0, RodadaPlacaDeVideoJogador = 0, RodadaDiscoJogador = 0, RodadaFonteJogador = 0, RodadaGabineteJogador = 0; //Variáveis para armazenar a última rodada em que o jogador comparou determinada carta
+	public static int RodadaPlacaMaeOponente = 0, RodadaProcessadorOponente = 0, RodadaMemoriaOponente = 0, RodadaPlacaDeVideoOponente = 0, RodadaDiscoOponente = 0, RodadaFonteOponente = 0, RodadaGabineteOponente = 0; //Variáveis para armazenar a útlima rodada em que o oponente comparou determinada carta
 
 	IEnumerator ComecarComparacao(string componente, float delayTime)
 	{

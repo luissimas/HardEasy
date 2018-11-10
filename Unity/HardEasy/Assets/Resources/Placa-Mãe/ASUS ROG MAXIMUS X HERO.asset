@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Imagem: {fileID: 21300000, guid: 916cb1185c8dc3440ad9c4c9e1b5daec, type: 3}
   Nome: ROG MAXIMUS X HERO
-  Socket: LGA 1151
+  Socket: LGA1151
   DDR: DDR4
   QuantidadeMemoria: 64
   SlotsPCIE: 6

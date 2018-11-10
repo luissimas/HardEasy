@@ -12,4 +12,10 @@ public class Manager : MonoBehaviour
 	public static bool OponentePodeInteragir = false;
 	public static bool PodeInteragir = true;
 
+	public void ContinuarJogo()
+	{
+		Time.timeScale = 1f;
+
+		Informacoes.btnContinuar.SetActive(false);
+	}
 }

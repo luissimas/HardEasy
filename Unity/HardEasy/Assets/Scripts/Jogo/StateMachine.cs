@@ -12,12 +12,17 @@ public class StateMachine : MonoBehaviour
 		EstadoAtual = Estados.Inicio; //Inicia o jogo no estado de início
 	}
 
-	private void Update()
+	void Update()
 	{
 		GerenciadorDeRodadas(); //Verifica o gerenciador de rodadas a cada frame
 		ProximoEstadoAoComparar(); //Avança uma rodada sempre que as cartas forem comparadas
 		ProximoEstadoAoTrocar(); //Avança uma rodada sempre que as cartas forem trocadas
 		JogadorText.text = TextVez;
+	}
+
+	private void OnEnable()
+	{
+		EstadoAtual = Estados.Inicio;
 	}
 
 	public enum Estados { Inicio, VezDoJogador, VezDoOponente, Fim } //Enumerador contendo todos os estados de jogo possíveis
@@ -50,10 +55,15 @@ public class StateMachine : MonoBehaviour
 		switch (EstadoAtual)
 		{
 			case (Estados.Inicio):
+				Manager.PodeInteragir = false;
 				Lista.CarregarListas(); //Carega as listas dos componentes
 				IniciarCartas.IniciarBaralho(Informacoes.PanelJogador); //Embaralha e inicia as cartas do jogador
 				IniciarCartas.IniciarBaralho(Informacoes.PanelOponente); //Embaralha e inicia as cartas do oponente
 				Verificar.VerificarCartas(Informacoes.PanelJogador, Informacoes.PanelOponente); //Verifica se as cartas do jogador e do oponente são iguais e as embaralha novamente
+
+				resetarRodadas();
+
+				Manager.PodeInteragir = true;
 				EstadoMudou = true;
 				Rodada++; //Avança uma rodada
 				EstadoAtual = EstadoAtual + Random.Range(1, 3); //Escolhe quem irá começar jogando de forma aleatória
@@ -174,5 +184,28 @@ public class StateMachine : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
+	public void resetarRodadas()
+	{
+		Comparar.RodadaPlacaMaeJogador = 0;
+		Comparar.RodadaProcessadorJogador = 0;
+		Comparar.RodadaMemoriaJogador = 0;
+		Comparar.RodadaPlacaDeVideoJogador = 0;
+		Comparar.RodadaDiscoJogador = 0;
+		Comparar.RodadaFonteJogador = 0;
+		Comparar.RodadaGabineteJogador = 0;
+
+		Comparar.RodadaPlacaMaeOponente = 0;
+		Comparar.RodadaProcessadorOponente = 0;
+		Comparar.RodadaMemoriaOponente = 0;
+		Comparar.RodadaPlacaDeVideoOponente = 0;
+		Comparar.RodadaDiscoOponente = 0;
+		Comparar.RodadaFonteOponente = 0;
+		Comparar.RodadaGabineteOponente = 0;
+
+		HardCash.HardCashJogador = 0;
+		HardCash.HardCashOponente = 0;
+		Rodada = 0;
 	}
 }

@@ -2854,7 +2854,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &302362705
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4471,7 +4472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &494476505
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4987,7 +4989,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &522109031
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8145,7 +8148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &874389311
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9272,7 +9276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &978372119
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18218,7 +18223,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: VITORIA DE SUA MAE
+  m_text: VITORIA DO CARA MAIS BONITO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4dc30103e8844f41ab5bc97432a7ede, type: 2}
   m_sharedMaterial: {fileID: 21708468561500142, guid: b4dc30103e8844f41ab5bc97432a7ede,
@@ -18287,10 +18292,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1923955414}
-    characterCount: 18
+    characterCount: 27
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -19001,7 +19006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JogadorNomeText: {fileID: 1923955414}
-  Panel: {fileID: 184967038}
+  PanelFinal: {fileID: 184967038}
 --- !u!1 &1976235718
 GameObject:
   m_ObjectHideFlags: 0
@@ -19408,7 +19413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &2006628458
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -19727,7 +19733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelJogador: {fileID: 0}
   PanelOponente: {fileID: 0}
-  ScaleOffset: 0.2
+  PanelFinal: {fileID: 184967038}
+  ScaleOffset: 0.4
 --- !u!225 &2047936134
 CanvasGroup:
   m_ObjectHideFlags: 0

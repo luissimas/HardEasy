@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 		TimerManager();
 	}
 
-	public static int TempoDaRodada = 31; //Variável para controlar o tempo da rodada atual
+	public static int TempoDaRodada = Informacoes.tempoRodada + 1; //Variável para controlar o tempo da rodada atual
 	public TMP_Text TimerText;
 	public bool TimerPausou = false;
 
@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
 		if ((StateMachine.EstadoMudou) && (StateMachine.EstadoAtual != StateMachine.Estados.Fim))
 		{
 			CancelInvoke("SetTimer"); //Interrompe a função do timer antigo
-			TempoDaRodada = 31; //Reseta o timer
+			TempoDaRodada = Informacoes.tempoRodada + 1; //Reseta o timer
 			StateMachine.EstadoMudou = false;
 			InvokeRepeating("SetTimer", (float)0.0, (float)1.0); //Inicia o timer novamente
 		}

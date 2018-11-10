@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Fim : MonoBehaviour {
 
 	public TMP_Text JogadorNomeText;
-	public GameObject Panel;
+	public GameObject PanelFinal;
 
 	void Start ()
 	{
@@ -17,13 +17,13 @@ public class Fim : MonoBehaviour {
 
 	public void CarregarCartas()
 	{
-		Panel.GetComponentInChildren<DisplayProcessador>().processador = StateMachine.ProcessadorVitorioso;
-		Panel.GetComponentInChildren<DisplayMemoria>().memoria = StateMachine.MemoriaVitorioso;
-		Panel.GetComponentInChildren<DisplayPlacaMae>().placaMae = StateMachine.PlacaMaeVitorioso;
-		Panel.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = StateMachine.PlacaDeVideoVitorioso;
-		Panel.GetComponentInChildren<DisplayDisco>().disco = StateMachine.DiscoVitorioso;
-		Panel.GetComponentInChildren<DisplayFonte>().fonte = StateMachine.FonteVitorioso;
-		Panel.GetComponentInChildren<DisplayGabinete>().gabinete = StateMachine.GabineteVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayProcessador>().processador = StateMachine.ProcessadorVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayMemoria>().memoria = StateMachine.MemoriaVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayPlacaMae>().placaMae = StateMachine.PlacaMaeVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayPlacaDeVideo>().placaDeVideo = StateMachine.PlacaDeVideoVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayDisco>().disco = StateMachine.DiscoVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayFonte>().fonte = StateMachine.FonteVitorioso;
+		PanelFinal.GetComponentInChildren<DisplayGabinete>().gabinete = StateMachine.GabineteVitorioso;
 
 		Informacoes.JogadorCartaPlacaMaeMudou = true;
 		Informacoes.JogadorCartaProcessadorMudou = true;

@@ -46,11 +46,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("PlacaMae", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("PlacaMae", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayPlacaMae>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("PlacaMae", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("PlacaMae", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -67,11 +67,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("Processador", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("Processador", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayProcessador>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("Processador", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("Processador", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -88,11 +88,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("Memoria", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("Memoria", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayMemoria>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("Memoria", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("Memoria", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -109,11 +109,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("PlacaDeVideo", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("PlacaDeVideo", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayPlacaDeVideo>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("PlacaDeVideo", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("PlacaDeVideo", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -130,11 +130,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("Disco", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("Disco", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayDisco>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("Disco", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("Disco", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -151,11 +151,11 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("Fonte", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("Fonte", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayFonte>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("Fonte", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("Fonte", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
@@ -172,24 +172,28 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 							//Troca a carta se baseado na tag do objeto
 							if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "PlayerCard")
 							{
-								StartCoroutine(ComecarTroca("Gabinete", 0.5f, Informacoes.PanelJogador));
+								StartCoroutine(ComecarTroca("Gabinete", 1f, Informacoes.PanelJogador));
 							}
 							else if (GetComponentInChildren<DisplayGabinete>().gameObject.tag == "OpponentCard")
 							{
-								StartCoroutine(ComecarTroca("Gabinete", 0.5f, Informacoes.PanelOponente));
+								StartCoroutine(ComecarTroca("Gabinete", 1f, Informacoes.PanelOponente));
 							}
 						}
 					}
 
-					Invoke("RetornarCartas", 2);
+					StartCoroutine(Pausar(1.5f));
+
+					StartCoroutine(RetornarCartas(3f));
 
 				}
 			}
 		}
 	}
 
-	public void RetornarCartas()
+	IEnumerator RetornarCartas(float delayTime)
 	{
+		yield return new WaitForSeconds(delayTime);
+
 		while (GetComponentInChildren<CanvasGroup>() != null)
 		{
 			for (int i = 0; i < GetComponentsInChildren<CanvasGroup>().Length; i++)
@@ -215,6 +219,17 @@ public class Trocar : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		else
 		{
 			Manager.PodeInteragir = true;
+		}
+	}
+
+	IEnumerator Pausar(float delayTime)
+	{
+		yield return new WaitForSeconds(delayTime);
+
+		if (Trocou)
+		{
+			Informacoes.btnContinuar.SetActive(true);
+			Time.timeScale = 0f;
 		}
 	}
 
