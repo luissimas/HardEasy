@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: POWER COLOR RADEON RX 550
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: ed58b6d1e2b964f4fbad54755d9ce2ca, type: 3}
+  Imagem: {fileID: 21300000, guid: 003d072d8c27d6c4286abe5357b9ddc6, type: 3}
   Nome: RADEON RX 550
   Clock: 1750
   Memoria: 2

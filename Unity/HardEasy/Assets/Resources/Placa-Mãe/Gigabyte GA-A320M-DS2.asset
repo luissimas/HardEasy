@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5093f1aab924244c814bb8ce085240c, type: 3}
   m_Name: Gigabyte GA-A320M-DS2
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 64db808f69611cb4fa9301b43aca368f, type: 3}
+  Imagem: {fileID: 21300000, guid: 4cbdf1aeb71efe84ebc9ead9ba8f878f, type: 3}
   Nome: GA-A320M-DS2
   Socket: AM4
   DDR: DDR4
@@ -20,5 +20,5 @@ MonoBehaviour:
   PortasSata: 4
   SuporteSLI: 0
   SuporteCrossfire: 0
-  Formato: mATX
+  Formato: micro-ATX
   Preco: 359.9

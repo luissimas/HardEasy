@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc9182ea5a740c499ba15fbd918f964, type: 3}
   m_Name: COOLER MASTER HAF
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 6fc4373c991eaf34eb4c8bf127eb9fcc, type: 3}
+  Imagem: {fileID: 21300000, guid: db6bd012f96cc3e4aa6fe3c582ea9865, type: 3}
   Nome: COOLER MASTER HAF
   FormatoPlacaMae: ATX, mATX, Mini-ITX
   QuantidadeDeFans: 3

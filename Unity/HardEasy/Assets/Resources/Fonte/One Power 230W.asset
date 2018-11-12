@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4f92dd1904704398f0a010f557fa5, type: 3}
   m_Name: One Power 230W
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Capacidade: 0
-  Eficiencia: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: c3a54568fe4cd9948ae42d2dd67050dd, type: 3}
+  Nome: One Power 230W
+  Capacidade: 230
+  Eficiencia: 65
+  Preco: 45.9

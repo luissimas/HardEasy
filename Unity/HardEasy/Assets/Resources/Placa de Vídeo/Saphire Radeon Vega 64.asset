@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: Saphire Radeon Vega 64
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Clock: 0
-  Memoria: 0
+  Imagem: {fileID: 21300000, guid: ae8fc6db421962b488c49d7326d57232, type: 3}
+  Nome: Radeon Rx Vega 64
+  Clock: 1607
+  Memoria: 8
   SLI: 0
   Crossfire: 0
-  Consumo: 0
-  FonteMinima: 0
-  Preco: 0
+  Consumo: 295
+  FonteMinima: 750
+  Preco: 2539.53

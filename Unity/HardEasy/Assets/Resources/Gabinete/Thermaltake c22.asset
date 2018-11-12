@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc9182ea5a740c499ba15fbd918f964, type: 3}
   m_Name: Thermaltake c22
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 3e696cbd814dc2b46bd2ceb1f6e28acb, type: 3}
+  Imagem: {fileID: 21300000, guid: 12f2849bcd292bc4a9eaa789947b066a, type: 3}
   Nome: Thermaltake C22
   FormatoPlacaMae: ATX, mATX, Mini-ITX
   QuantidadeDeFans: 4

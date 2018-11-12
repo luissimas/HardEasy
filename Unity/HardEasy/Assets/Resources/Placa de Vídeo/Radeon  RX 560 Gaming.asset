@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: Radeon  RX 560 Gaming
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 644600aec6c7bf8408bf9654cddd53e1, type: 3}
+  Imagem: {fileID: 21300000, guid: b924902455b3163448ed162552f7faef, type: 3}
   Nome: 'Radeon RX 560 '
   Clock: 1300
   Memoria: 4

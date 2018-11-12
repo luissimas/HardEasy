@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecc9182ea5a740c499ba15fbd918f964, type: 3}
-  m_Name: Novo gabinete
+  m_Name: BLUECASE BG-015
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  FormatoPlacaMae: 
-  QuantidadeDeFans: 0
-  SlotsPCI: 0
-  BaiasHDSSD: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: 13bd3f28c239cca4aa8f966b27617e97, type: 3}
+  Nome: BLUECASE BG-015
+  FormatoPlacaMae: ATX, Micro-Atx, Mini-ITX
+  QuantidadeDeFans: 5
+  SlotsPCI: 7
+  BaiasHDSSD: 3
+  Preco: 158.9

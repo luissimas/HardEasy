@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: i5-8400
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 14674510dc656c743ae1247c6a2dd231, type: 3}
+  Imagem: {fileID: 21300000, guid: 95c083aef11e12c4bb5c80d6e84c22db, type: 3}
   Nome: Intel Core i5-8400
   Socket: LGA1151
   Nucleos: 6

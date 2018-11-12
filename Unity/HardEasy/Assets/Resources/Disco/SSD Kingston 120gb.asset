@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1a0a6a824ec246a89e369aa3ef1f0, type: 3}
   m_Name: SSD Kingston 120gb
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 3df0aef47de458a41b2605eddf10a1cf, type: 3}
+  Imagem: {fileID: 21300000, guid: f92ef75021aea5c42b893bf8244b83ea, type: 3}
   Nome: SSD Kingston
   CapacidadeDeArmazenamento: 120
   Velocidade: 500

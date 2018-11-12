@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
   m_Name: Kingston Hyperx Savage
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 8f2d06eda64ad844a9c178172e10cb29, type: 3}
+  Imagem: {fileID: 21300000, guid: 3791e060ca7310c42ae2e26ed5dd5269, type: 3}
   Nome: 'Hyperx Savage '
   QuantidadeMemoria: 4
   DDR: DDR3

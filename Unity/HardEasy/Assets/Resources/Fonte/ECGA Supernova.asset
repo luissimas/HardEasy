@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4f92dd1904704398f0a010f557fa5, type: 3}
   m_Name: ECGA Supernova
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Capacidade: 0
-  Eficiencia: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: 8241ef8c88a0a4941acb9c3866ce787d, type: 3}
+  Nome: EVGA Supernova
+  Capacidade: 1300
+  Eficiencia: 90
+  Preco: 2135.91

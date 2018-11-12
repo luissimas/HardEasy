@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
-  m_Name: T-FORCE VULCAN 8GB
+  m_Name: Kingston 8GB
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 'T-FORCE VULCAN '
+  Imagem: {fileID: 21300000, guid: 20a37500c20444e438b7fc18ac04c0e6, type: 3}
+  Nome: 'Kingston 8GB '
   QuantidadeMemoria: 8
-  DDR: DDR4
-  Clock: 2400
-  Latencia: 16
-  Preco: 429.01
+  DDR: DDR3
+  Clock: 1333
+  Latencia: 9
+  Preco: 389.9

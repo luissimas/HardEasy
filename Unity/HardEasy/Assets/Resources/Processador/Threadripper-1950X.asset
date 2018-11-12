@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: Threadripper-1950X
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: b7f0926ac9e2e2f40b8b7ce98b993888, type: 3}
+  Imagem: {fileID: 21300000, guid: f1e9288a73bb2954da7b5158545af695, type: 3}
   Nome: AMD Ryzen Threadripper 1950X
   Socket: STR4
   Nucleos: 16

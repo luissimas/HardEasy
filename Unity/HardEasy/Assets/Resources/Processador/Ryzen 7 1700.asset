@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: Ryzen 7 1700
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 78fd53147d1ae2a46b81161d7d0f18e4, type: 3}
+  Imagem: {fileID: 21300000, guid: fc6dbb44f1a2263429f0bbd35c08af50, type: 3}
   Nome: AMD Ryzen 7 1700
   Socket: AM4
   Nucleos: 8

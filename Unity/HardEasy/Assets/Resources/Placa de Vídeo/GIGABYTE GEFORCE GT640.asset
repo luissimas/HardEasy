@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: GIGABYTE GEFORCE GT640
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: bf991deb5333b15458453f5a5e8ea002, type: 3}
+  Imagem: {fileID: 21300000, guid: b9ee42f000f1b0649bf1752c0468a7bf, type: 3}
   Nome: 'GT640 '
   Clock: 1046
   Memoria: 1

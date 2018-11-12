@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1a0a6a824ec246a89e369aa3ef1f0, type: 3}
   m_Name: SSD Toshiba OCZ TR200
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 7ee3a962aef036c43a13b359c0efdfda, type: 3}
+  Imagem: {fileID: 21300000, guid: e0c6f97258406c94896d02e78ceedb04, type: 3}
   Nome: SSD Toshiba
   CapacidadeDeArmazenamento: 240
   Velocidade: 555

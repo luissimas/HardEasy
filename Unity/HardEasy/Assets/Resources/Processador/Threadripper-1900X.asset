@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: Threadripper-1900X
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Socket: 
-  Nucleos: 0
-  Threads: 0
-  Clock: 0
-  TDP: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: 0038ff6537f05c24f989009d47f6aba5, type: 3}
+  Nome: AMD Ryzen Threadripper 1900X
+  Socket: STR4
+  Nucleos: 8
+  Threads: 16
+  Clock: 4
+  TDP: 180
+  Preco: 2149.9

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: I9-7980xe
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 462cc58ad8cbd75448e941c0dfbc0889, type: 3}
+  Imagem: {fileID: 21300000, guid: f13a5094b48e6a24d97594fb77ed7a71, type: 3}
   Nome: Intel Core i9 7980XE
   Socket: LGA 2066
   Nucleos: 18

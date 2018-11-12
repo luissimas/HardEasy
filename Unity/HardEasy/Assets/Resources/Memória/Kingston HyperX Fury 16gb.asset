@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
   m_Name: Kingston HyperX Fury 16gb
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 6a28704d687978c48b396ac670da9b62, type: 3}
+  Imagem: {fileID: 21300000, guid: 7566447f836a9c24eb084aa28c7c8351, type: 3}
   Nome: 'HyperX Fury '
   QuantidadeMemoria: 16
   DDR: DDR4

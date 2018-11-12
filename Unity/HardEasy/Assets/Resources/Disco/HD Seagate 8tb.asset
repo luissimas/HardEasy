@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1a0a6a824ec246a89e369aa3ef1f0, type: 3}
   m_Name: HD Seagate 8tb
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 897249b58369f684caccf52873bfe331, type: 3}
+  Imagem: {fileID: 21300000, guid: 34360be7576f64d429ad5e1b05e38b14, type: 3}
   Nome: HD Seagate
   CapacidadeDeArmazenamento: 8000
   Velocidade: 210

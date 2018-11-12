@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
   m_Name: KINGSTON HYPERX SAVAGE 16GB
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 88ccbafed8a4b90419b86dd99af44e2a, type: 3}
+  Imagem: {fileID: 21300000, guid: 36606c09f6894424395ba367f24b1907, type: 3}
   Nome: 'HYPERX SAVAGE '
   QuantidadeMemoria: 16
   DDR: DDR4

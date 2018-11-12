@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: GIGABYTE GEFORCE GTX 1070 G1 Gaming
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: dff6040ff317b9045abce37b957ad36b, type: 3}
+  Imagem: {fileID: 21300000, guid: c60ce5f704f95cb4aaf782bc4c4c748e, type: 3}
   Nome: 'GEFORCE GTX 1070 '
   Clock: 1780
   Memoria: 8
-  SLI: 1
+  SLI: 0
   Crossfire: 0
   Consumo: 180
   FonteMinima: 500

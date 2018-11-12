@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
-  m_Name: T-FORCE DARK 16GB 3000MHZ
+  m_Name: HyperX FURY DDR3
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 85b4915da0456994988d0a827f2d3f65, type: 3}
-  Nome: 'T-FORCE DARK '
-  QuantidadeMemoria: 16
-  DDR: DDR4
-  Clock: 3000
-  Latencia: 16
-  Preco: 1199.04
+  Imagem: {fileID: 21300000, guid: c6d8dadb06d08c245ba00c44415977d8, type: 3}
+  Nome: 'HyperX FURY '
+  QuantidadeMemoria: 4
+  DDR: DDR3
+  Clock: 1600
+  Latencia: 10
+  Preco: 209.9

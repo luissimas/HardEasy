@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
-  m_Name: T-FORCE DARK 16GB 2666MHZ
+  m_Name: Corsair Vengeance DDR3
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 277b9e3cfc6f5364fad967d209ea528f, type: 3}
-  Nome: 'T-FORCE DARK '
-  QuantidadeMemoria: 16
-  DDR: DDR4
-  Clock: 2666
-  Latencia: 17
-  Preco: 949.03
+  Imagem: {fileID: 21300000, guid: 26829fe03d169fc48b17283f6d5b3357, type: 3}
+  Nome: 'Corsair Vengeance '
+  QuantidadeMemoria: 4
+  DDR: DDR3
+  Clock: 1600
+  Latencia: 10
+  Preco: 189.9

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5093f1aab924244c814bb8ce085240c, type: 3}
   m_Name: ASUS Z170
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: fd1ca4ff6283bd646ab1ef88d7501a6d, type: 3}
+  Imagem: {fileID: 21300000, guid: 15ab0b9d2e9af6d4d9d27a2ab23255fe, type: 3}
   Nome: Z170I-Pro Gaming
   Socket: LGA1151
   DDR: DDR4

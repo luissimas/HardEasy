@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: EVGA Geforce GTX 1050
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 47fc4b46ba330bb49af59b31298b2aec, type: 3}
+  Imagem: {fileID: 21300000, guid: 2d96ddf08b5c42b46b84baded2676aa1, type: 3}
   Nome: GTX 1050
   Clock: 1354
   Memoria: 2

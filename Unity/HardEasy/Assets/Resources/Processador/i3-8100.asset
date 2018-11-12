@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: i3-8100
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: a6f8424865602c349a60c5b4f4178661, type: 3}
+  Imagem: {fileID: 21300000, guid: ee801662fe365f848b04ab4b631c3f76, type: 3}
   Nome: Intel Core i3-8100
   Socket: LGA1151
   Nucleos: 4

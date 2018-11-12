@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cf8dd44b189243a2f0e56139f1436, type: 3}
   m_Name: i5-7640X
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 2cb0e9940c0a1164ca7c0ce3160c50c1, type: 3}
+  Imagem: {fileID: 21300000, guid: 96ba1986bd5fe7c4faa3afba692a7530, type: 3}
   Nome: Intel Core i5-7640X
   Socket: LGA 2066
   Nucleos: 4

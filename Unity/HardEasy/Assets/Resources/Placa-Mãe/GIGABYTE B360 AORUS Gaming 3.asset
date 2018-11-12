@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5093f1aab924244c814bb8ce085240c, type: 3}
   m_Name: GIGABYTE B360 AORUS Gaming 3
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: a4905e75ccdf45f499fec346186d38fe, type: 3}
+  Imagem: {fileID: 21300000, guid: be9863b8cc24c63408066724bb962a87, type: 3}
   Nome: GIGABYTE B360 AORUS
   Socket: LGA1151
   DDR: DDR4

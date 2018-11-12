@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4f92dd1904704398f0a010f557fa5, type: 3}
   m_Name: Corsair vs400
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Capacidade: 0
-  Eficiencia: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: a28a527ff4296a443994622e0edb16e4, type: 3}
+  Nome: Corsair vs400
+  Capacidade: 400
+  Eficiencia: 80
+  Preco: 214.9

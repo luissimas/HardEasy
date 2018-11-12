@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4f92dd1904704398f0a010f557fa5, type: 3}
   m_Name: C3-Tech 200W
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 0}
-  Nome: 
-  Capacidade: 0
-  Eficiencia: 0
-  Preco: 0
+  Imagem: {fileID: 21300000, guid: 6274510958d0fa34888af96029ef0c9f, type: 3}
+  Nome: C3-Tech 200W
+  Capacidade: 230
+  Eficiencia: 65
+  Preco: 39.9

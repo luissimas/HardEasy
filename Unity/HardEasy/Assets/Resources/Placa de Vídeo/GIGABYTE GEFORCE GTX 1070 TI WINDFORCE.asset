@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1e017b5dac1e45a856db6b68c0c3c, type: 3}
   m_Name: GIGABYTE GEFORCE GTX 1070 TI WINDFORCE
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 3b9346b6a74b2574abafccd7a88c3b7b, type: 3}
+  Imagem: {fileID: 21300000, guid: 9b7655104f76f454f889a55a709a792b, type: 3}
   Nome: GTX 1070 TI
   Clock: 1721
   Memoria: 8
