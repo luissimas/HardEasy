@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc890ee26d7054a8979b55506fef28, type: 3}
   m_Name: CORSAIR VENGEANCE LPX VERMELHO 8GB
   m_EditorClassIdentifier: 
-  Imagem: {fileID: 21300000, guid: 9f2f02b2d65617d46afed946e9e5ef9a, type: 3}
+  Imagem: {fileID: 21300000, guid: b092dc056e43a9548a6c4d48353b36e0, type: 3}
   Nome: 'CORSAIR VENGEANCE LPX '
   QuantidadeMemoria: 8
   DDR: DDR4
